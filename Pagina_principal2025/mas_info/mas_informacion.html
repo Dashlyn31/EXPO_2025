@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\mas_info\css_mas_informacion.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Botón flotante para abrir la barra lateral -->
+<div id="menu-toggle" style="position: fixed; top: 15px; left: 15px; z-index: 1100;">
+  <button onclick="toggleSidebar()" style="font-size: 28px; background: none; border: none; color: #000000; cursor: pointer;">≡</button>
+</div>
+
+<!-- Barra lateral -->
+<div class="sidebar" id="sidebar">
+    <div class="contenedor-close-boton">
+    <div class="close-btn" onclick="toggleSidebar()">
+      <i class="fas fa-times"></i> <!-- Icono X de Font Awesome -->
+    </div>
+  </div>
+  <div class="profile-section">
+    <img src="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\bases de la pagina\icono_usuario.webp" alt="Imagen de perfil" id="profile-img">
+
+    <label for="profile-upload" class="upload-btn">Cambiar imagen</label>
+    <input type="file" id="profile-upload" accept="image/*" onchange="changeProfileImage()" />
+
+    <p id="user-account">Cuenta: <span id="account-name"></span></p>
+  </div>
+
+   <ul class="sidebar-menu">
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\politicas\politicas.html">Políticas de privacidad</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\mas_info\mas_informacion.html">Más información</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\service\service.html">Servicio</a></li>
+  <li><a href="">Registrarse / Iniciar sesión</a></li>
+  <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\principal\pagina_principal.html">Volver</a></li>
+  </ul>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const menuToggle = document.getElementById("menu-toggle");
+
+    sidebar.classList.toggle("active");
+
+    // Mostrar u ocultar el botón flotante según el estado
+    if (sidebar.classList.contains("active")) {
+      menuToggle.style.display = "none";
+    } else {
+      menuToggle.style.display = "block";
+    }
+  }
+
+  function changeProfileImage() {
+    const fileInput = document.getElementById("profile-upload");
+    const file = fileInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("profile-img").src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function cerrarSesion() {
+    alert("Has cerrado sesión exitosamente.");
+    window.location.href = "c:\\Users\\HP\\Documents\\Pagina principal ´25\\index.html";
+  }
+</script>
+<!--fin de la barra lateral-->
+  <!-- Sección: Más información sobre Green Leaders -->
+  <section class="informacion-general">
+    <div class="contenedor">
+      <h2 class="titulo">Más sobre Green Leaders</h2>
+      <p class="descripcion">Green Leaders es una plataforma enfocada en la educación y acción ambiental en Panamá. Aquí te contamos más sobre nuestra misión, visión, proyectos y mucho más.</p>
+      <div class="bloques">
+        <div class="bloque">
+          <h3>¿Quiénes somos?</h3>
+          <p>Green Leaders es un movimiento educativo que busca inspirar y movilizar a los estudiantes para implementar soluciones sostenibles en sus comunidades. Trabajamos con diferentes instituciones para promover el cuidado ambiental y el reciclaje.</p>
+        </div>
+        <div class="bloque">
+          <h3>Misión</h3>
+          <p>Nuestra misión es formar líderes escolares que puedan ejecutar soluciones sostenibles para enfrentar problemas ambientales locales como la contaminación, la deforestación y el cambio climático.</p>
+        </div>
+        <div class="bloque">
+          <h3>Visión</h3>
+          <p>Ser la red educativa ambiental más activa y conectada de Panamá, ayudando a los estudiantes a tomar acción y educando sobre la importancia de la conservación del medio ambiente.</p>
+        </div>
+        <div class="bloque">
+          <h3>Proyectos destacados</h3>
+          <ul>
+            <li><i class="fas fa-seedling"></i> Proyectos de reforestación y restauración de áreas verdes</li>
+            <li><i class="fas fa-recycle"></i> Reciclaje de materiales en escuelas y comunidades</li>
+            <li><i class="fas fa-graduation-cap"></i> Cursos y talleres virtuales sobre educación ambiental</li>
+            <li><i class="fas fa-globe-americas"></i> Iniciativas de monitoreo y medición de impacto en las escuelas</li>
+          </ul>
+        </div>
+        <div class="bloque">
+          <h3>Alianzas estratégicas</h3>
+          <p>Trabajamos en conjunto con instituciones como MiAmbiente y diversas ONGs para llevar a cabo proyectos de impacto ambiental a gran escala, apoyando la educación y la acción ambiental desde las bases.</p>
+        </div>
+        <div class="bloque">
+          <h3>Compromiso social</h3>
+          <p>Además de ser una plataforma educativa, Green Leaders tiene un fuerte compromiso con la sociedad. Facilitamos la participación en proyectos prácticos que permiten a los estudiantes cumplir con sus horas de trabajo social mientras generan un impacto positivo en su comunidad.</p>
+        </div>
+                <div class="bloque">
+          <h3>Alianzas estratégicas</h3>
+          <p>Trabajamos en conjunto con instituciones como MiAmbiente y diversas ONGs para llevar a cabo proyectos de impacto ambiental a gran escala, apoyando la educación y la acción ambiental desde las bases.</p>
+        </div>
+                <div class="bloque">
+          <h3>Alianzas estratégicas</h3>
+          <p>Trabajamos en conjunto con instituciones como MiAmbiente y diversas ONGs para llevar a cabo proyectos de impacto ambiental a gran escala, apoyando la educación y la acción ambiental desde las bases.</p>
+        </div>
+        <div class="bloque">
+          <h3>Enlaces de utilidad</h3>
+          <ul>
+            <li><a href="https://www.miambiente.gob.pa" target="_blank">MiAmbiente Panamá</a></li>
+            <li><a href="#">Guía de reciclaje escolar</a></li>
+            <li><a href="#">Formulario de inscripción a proyectos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

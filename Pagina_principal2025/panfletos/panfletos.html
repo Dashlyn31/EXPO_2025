@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="estilo_planfletos.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- boton de volver-->
+<a href="http://localhost/EXPO_2025/Pagina_principal2025/principal/pagina_principal.html#interactive-section" class="back-button">
+Volver
+</a>
+</head>
+<body>
+    <section id="panfletos" class="panfletos-section">
+  <h2 class="panfletos-title animate__animated animate__fadeInDown">
+    📢 Panfletos Ambientales
+  </h2>
+
+  <p class="panfletos-subtitle animate__animated animate__fadeInUp">
+    Descubre nuestros 20 panfletos dedicados a la educación ambiental, sostenibilidad, reciclaje, conservación de agua, biodiversidad y mucho más. Haz clic en cada uno para verlo en detalle y descargarlo.
+  </p>
+
+  <div class="panfletos-grid animate__animated animate__fadeIn">
+    <!-- Ejemplo panfleto -->
+    <div class="panfleto-card" onclick="openModal('1.png')">
+      <img src="1.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+      <div class="panfleto-info">
+        <h3>Panfleto #1</h3>
+        <p>Glosario Ambiental</p>
+      </div>
+    </div>
+<div class="panfleto-card" onclick="openModal('2.png')">
+  <img src="2.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #2</h3>
+    <p>Proyecto Ecológico</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('3.png')">
+  <img src="3.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #3</h3>
+    <p>Agricultura Sostenible</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('4.png')">
+  <img src="4.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #4</h3>
+    <p>Calentamiento Global.</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('5.png')">
+  <img src="5.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #5</h3>
+    <p>Plantilla Ambiental</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('6.png')">
+  <img src="6.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #6</h3>
+    <p>Acciones Humanas y Sostenibilidad</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('7.png')">
+  <img src="7.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #7</h3>
+    <p>Cambio Climático</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('8.png')">
+  <img src="8.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #8</h3>
+    <p>Energia Renovable</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('9.png')">
+  <img src="9.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #9</h3>
+    <p>Consumo Responsable</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('10.png')">
+  <img src="10.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #10</h3>
+    <p>Impacto del Plástico</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('11.png')">
+  <img src="11.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #11</h3>
+    <p>Salud y Medio Ambiente</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('12.png')">
+  <img src="12.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #12</h3>
+    <p>La Contaminación del Aire</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('13.png')">
+  <img src="13.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #13</h3>
+    <p>Biodiversidad</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('14.png')">
+  <img src="14.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #14</h3>
+    <p>Transporte Verde</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('15.png')">
+  <img src="15.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #15</h3>
+    <p>Los Óceanos</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('16.png')">
+  <img src="16.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #16</h3>
+    <p>Reduce, Reutiliza y Recicla</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('17.png')">
+  <img src="17.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #17</h3>
+    <p>Contaminación Ambiental</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('18.png')">
+  <img src="18.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #18</h3>
+    <p>Turismo Sostenible</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('19.png')">
+  <img src="19.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #19</h3>
+    <p>Educación Ambiental</p>
+  </div>
+</div>
+
+<div class="panfleto-card" onclick="openModal('20.png')">
+  <img src="20.png" alt="Panfleto Ambiental 1" class="panfleto-img">
+  <div class="panfleto-info">
+    <h3>Panfleto #20</h3>
+    <p>Industrias Ambientales</p>
+  </div>
+</div>
+
+    <!-- Agrega los demás panfletos igual -->
+  </div>
+</section>
+
+<!-- Modal para imagen ampliada -->
+<div id="modal" class="modal" onclick="closeModal(event)">
+  <div class="modal-content">
+    <img id="modal-img" src="" alt="Panfleto ampliado">
+    <a id="download-pdf" href="#" download="panfleto.pdf" class="download-btn" onclick="downloadPDF(event)">
+      Descargar PDF
+    </a>
+    <button class="modal-close" onclick="closeModal(event)">&times;</button>
+  </div>
+</div>
+<script>
+    function openModal(imgSrc) {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  const downloadLink = document.getElementById('download-pdf');
+
+  modalImg.src = imgSrc;
+  downloadLink.href = imgSrc;
+  modal.style.display = 'flex';
+}
+
+function closeModal(event) {
+  // Para evitar que el click en la imagen o botones cierre el modal, verificamos el target
+  if(event.target.id === 'modal' || event.target.classList.contains('modal-close')) {
+    document.getElementById('modal').style.display = 'none';
+  }
+}
+
+// Función para descargar la imagen como PDF usando jsPDF
+function downloadPDF(event) {
+  event.preventDefault();
+  const imgSrc = document.getElementById('modal-img').src;
+
+  const img = new Image();
+  img.crossOrigin = "anonymous"; // por si la imagen está en otro dominio
+  img.src = imgSrc;
+
+  img.onload = function () {
+    const pdf = new window.jspdf.jsPDF({
+      orientation: 'portrait',
+      unit: 'pt',
+      format: [img.width, img.height]
+    });
+
+    pdf.addImage(img, 'JPEG', 0, 0, img.width, img.height);
+    pdf.save('panfleto.pdf');
+  }
+}
+
+</script>
+
+</body>

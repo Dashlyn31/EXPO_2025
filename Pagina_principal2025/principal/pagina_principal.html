@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="estilo_pagina_principal.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+  
+ /*inico del footer*/
+ .footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* altura del degradado */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.603), transparent);
+  z-index: 1;
+}
+
+.footer {
+  background: url('nueva.png');
+  background-size: cover; /* Asegura que cubra todo el espacio */
+  color: white;
+  position: relative; /* ¡No uses fixed aquí si hay contenido arriba! */
+  overflow: hidden;
+  min-height: 350px; /* Puedes ajustar según tu imagen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+ 
+.footer-top-curve {
+  position: relative;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: start; /* alinea todo al inicio (izquierda) */
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-left: 50px; /* ajusta a tu gusto */
+  margin-right: auto;
+  z-index: 2;
+  position: relative;
+  padding-top: 380px;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  margin: 10px;
+}
+.footer-column h3 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255); /* color de los títulos */
+  font-weight: bold;
+  font-family: "Marko One", sans-serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* sombra suave */
+}
+
+ 
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+ 
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+ 
+.footer-column ul li a {
+  color: rgb(247, 247, 247);
+  text-decoration: none;
+  font-size: 1.3em; /*letras de los enlaces*/
+  font-family: 'Poppins', sans-serif;
+
+}
+ 
+.footer-column ul li a:hover {
+  text-decoration: underline;
+}
+ 
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8em;
+  color: #18301b;/*color de las letras de abajo*/
+}
+ 
+.footer-bottom a {
+  display: block;
+  margin-top: 10px;
+  color: none;
+  text-decoration: none;
+}
+.footer-legal {
+  background-color: #18301b; /* tono oscuro compatible con el footer */
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* línea sutil */
+}
+/*fin del footer*/
+</style>
+</head>
+<body>
+<div class="hojas-flotando">
+  <span class="hoja hoja1">🍃</span>
+  <span class="hoja hoja2">🌻</span>
+  <span class="hoja hoja3">🌿</span>
+</div>
+  <!-- HEADER -->
+  <!-- Encabezado superior con logo y nombre -->
+<header class="greenleaders-header">
+  <div class="menu-icon">
+    <i class="fas fa-bars"></i>
+  </div>
+  <div class="logo-container">
+    <img src="prueba.png" alt="Logo Green leaders" class="logo-img" />
+    <img src="tipografia.png" alt="Green Mandai" class="logo-img" />
+  </div>
+  <div class="header-icons">
+    <div class="language-selector">
+      <div class="language-icon active" data-lang="es">
+        <i class="fas fa-globe"></i>
+        <span>ES</span>
+      </div>
+      <div class="language-icon" data-lang="en">
+        <i class="fas fa-globe"></i>
+        <span>EN</span>
+      </div>
+    </div>
+    <a href="login.html" class="login-icon">
+      <i class="fas fa-user"></i>
+      <span>Login</span>
+    </a>
+    <div class="theme-icon">
+      <i class="fas fa-moon"></i>
+    </div>
+  </div>
+</header>
+<nav class="greenlead-nav">
+  <ul class="green-list">
+    <li><a href="C:/xampp/htdocs/Expo_2025/Pagina_principal2025/mas_info/mas_informacion.html">Principal</a></li>
+    <li><a href="#">Estrategias Sostenibles</a></li>
+    <li><a href="#">CalenMap</a></li>
+    <li><a href="#">Juegos Interactivos</a></li>
+    <li><a href="#">Foro</a></li>
+  </ul>
+</nav>
+<!--GALERIA-->
+    <header class="header-gallery">
+        <div class="gallery-slide active" style="background-image: url('imagen\ 1.jpg');">
+            <div class="overlay active">
+                <h1>Impulsando el Cambio Verde</h1>
+                <p>Somos líderes en el cuidado del medio ambiente, guiados por nuestra pasión y nuestra visión</p>
+            </div>
+        </div>
+        <div class="gallery-slide" style="background-image: url('imagen\ 2.jpg');">
+            <div class="overlay">
+                <h1>Huellas que no deben borrarse</h1>
+                <p>La naturaleza depende de nosotros. Conservemos su belleza antes de que solo quede fotografías.</p>
+            </div>
+        </div>
+        <div class="gallery-slide" style="background-image: url('imagen\ 3.jpg');">
+            <div class="overlay">
+                <h1>Protejamos nuestra tierra</h1>
+                <p>Los bosques, ríos y montañas de Panamá son más que belleza, son el corazón de nuestro ecosistema.</p>
+            </div>
+        </div>
+        <div class="gallery-slide" style="background-image: url('imagen\ 4.jpg');">
+            <div class="overlay">
+                <h1>Rescatemos la vida silvestre</h1>
+                <p>Cada especie en peligro es un legado que podemos salvar. Cuidarlas es proteger el equilibrio de nuestro planeta.</p>
+            </div>
+        </div>
+        <div class="gallery-arrow prev">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </div>
+        
+        <div class="gallery-arrow next">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </div>
+        
+        <div class="gallery-controls">
+            <div class="gallery-dot active" data-index="0"></div>
+            <div class="gallery-dot" data-index="1"></div>
+            <div class="gallery-dot" data-index="2"></div>
+            <div class="gallery-dot" data-index="3"></div>
+        </div>
+    </header>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const slides = document.querySelectorAll('.gallery-slide');
+            const overlays = document.querySelectorAll('.overlay');
+            const dots = document.querySelectorAll('.gallery-dot');
+            const prevButton = document.querySelector('.gallery-arrow.prev');
+            const nextButton = document.querySelector('.gallery-arrow.next');
+            let currentSlide = 0;
+            let slideInterval;
+            
+            // Función para mostrar el slide actual
+            function showSlide(index) {
+                // Ocultar todos los slides
+                slides.forEach(slide => {
+                    slide.classList.remove('active');
+                });
+                
+                // Desactivar todas las overlays
+                overlays.forEach(overlay => {
+                    overlay.classList.remove('active');
+                });
+                
+                // Desactivar todos los dots
+                dots.forEach(dot => {
+                    dot.classList.remove('active');
+                });
+                
+                // Mostrar el slide actual
+                slides[index].classList.add('active');
+                overlays[index].classList.add('active');
+                dots[index].classList.add('active');
+                currentSlide = index;
+            }
+            
+            // Función para avanzar al siguiente slide
+            function nextSlide() {
+                let next = currentSlide + 1;
+                if (next >= slides.length) {
+                    next = 0;
+                }
+                showSlide(next);
+            }
+            
+            // Función para ir al slide anterior
+            function prevSlide() {
+                let prev = currentSlide - 1;
+                if (prev < 0) {
+                    prev = slides.length - 1;
+                }
+                showSlide(prev);
+            }
+            
+            // Configurar el intervalo para cambiar las imágenes automáticamente
+            function startSlideshow() {
+                slideInterval = setInterval(nextSlide, 5000); // Cambia cada 5 segundos
+            }
+            
+            // Detener el slideshow
+            function stopSlideshow() {
+                clearInterval(slideInterval);
+            }
+            
+            // Event listeners para los dots
+            dots.forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-index'));
+                    showSlide(slideIndex);
+                    stopSlideshow();
+                    startSlideshow();
+                });
+            });
+            
+            // Event listeners para los botones de navegación
+            prevButton.addEventListener('click', function() {
+                prevSlide();
+                stopSlideshow();
+                startSlideshow();
+            });
+            
+            nextButton.addEventListener('click', function() {
+                nextSlide();
+                stopSlideshow();
+                startSlideshow();
+            });
+            
+            // Iniciar el slideshow
+            startSlideshow();
+        });
+    </script>
+
+<script>
+  document.querySelector('.menu-icon').addEventListener('click', function() {
+    toggleSidebar();
+  });
+</script>
+
+<!--MARQUEE-->
+    <div class="marquee-container">
+        <div class="marquee">
+            <div class="marquee-content">
+                <i class="fa-brands fa-pagelines"></i>Cada acción cuenta. Únete a la revolución verde. Pequeñas decisiones hoy, grandes cambios mañana.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <section class="intro-frase">
+  <div class="contenedor-frase">
+    <blockquote>
+      “Somos líderes en el cuidado del medio ambiente, guidos por nuestra pasión y nuestra visión”
+    </blockquote>
+    <p class="autor">— Green Leaders</p>
+  </div>
+</section>
+<!-- Barra lateral -->
+ <div class="sidebar" id="sidebar" >
+  <div class="contenedor-close-boton">
+    <div class="close-btn" onclick="toggleSidebar()">
+      <i class="fas fa-times"></i> <!-- Icono X de Font Awesome -->
+    </div>
+  </div>
+
+<div class="profile-section">
+  <img src="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\bases de la pagina\icono_usuario.webp" alt="Imagen de perfil" id="profile-img"> <!--imagen predeterminada de perfil-->
+  
+  <label for="profile-upload" class="upload-btn">Cambiar imagen</label>
+  <input type="file" id="profile-upload" accept="image/*" onchange="changeProfileImage()" />
+  
+  <p id="user-account">Cuenta: <span id="account-name"></span></p>
+</div>
+
+<ul class="sidebar-menu">
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\politicas\politicas.html">Políticas de privacidad</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\mas_info\mas_informacion.html">Más información</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\service\service.html">Servicio</a></li>
+  <li><a href="">Registrarse / Iniciar sesión</a></li>
+  <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\principal\pagina_principal.html">Volver</a></li>
+</ul>
+</div>
+
+<script>
+function toggleSidebar() {
+  document.getElementById("sidebar").classList.toggle("active");
+}
+
+function changeProfileImage() {
+  const fileInput = document.getElementById("profile-upload");
+  const file = fileInput.files[0];
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function (e) {
+      document.getElementById("profile-img").src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+}
+
+function cerrarSesion() {
+  alert("Has cerrado sesión exitosamente.");
+  // Aquí puedes redirigir o limpiar datos si usas un backend
+  window.location.href = "c:\\Users\\HP\\Documents\\Pagina principal ´25\\index.html"; // redirige al inicio
+}
+
+</script>
+<!--fin de la barra lateral-->
+  <!-- Comienzo de la informacion general de la pagina -->
+<br>
+<!-- primer contenedor -->
+<section class="proposito">
+    <h3><strong>Nuestro Propósito:</strong></h3>
+    <div class="cajas">
+      <div class="caja">
+        <img src="imagen1.png"alt="Conciencia ambiental">
+        <p>Fomentar la conciencia y prácticas sostenibles mediante información e incentivo en la conservación ambiental.</p>
+      </div>
+      <div class="caja">
+        <img src="imagen2.jpg" alt="Inspiración comunitaria">
+        <p>Inspirar a estudiantes y comunidades a colaborar con acciones sostenibles y colaborar con instituciones ambientales.</p>
+      </div>
+      <div class="caja">
+        <img src="imagen3.jpg" alt="Proyecto sostenible">
+        <p>Promover la sostenibilidad a través de actividades ambientales y la creación de servicios en los entornos escolares.</p>
+      </div>
+    </div>
+  </section>
+<br>
+<!-- fin del primer contenedor-->
+ <!-- segunda seccion-->
+ <section class="compromiso">
+  <div class="texto">
+    <p>
+      La contaminación es una realidad que afecta tanto a Panamá como al resto del mundo.
+      Ríos llenos de desechos, aire contaminado y suelos dañados son consecuencias de nuestra 
+      falta de conciencia. Poco a poco estamos destruyendo el planeta que nos da vida. Es momento 
+      de asumir responsabilidad y cambiar nuestras acciones. Cuidar el ambiente no es solo una tarea
+      de gobiernos, es un compromiso de todos.
+    </p>
+  </div>
+  <div class="imagen">
+    <img src="imagen4.jpg" alt="Deforestación">
+  </div>
+</section>
+<!-- fin de la segunda seccion-->
+<div class="titulos">
+<p><strong>🌍¿Conoces el impacto que hemos causado a nuestro hogar?</strong></p>
+</div>
+<div class="parrafos">
+<p>
+El daño ambiental en Panamá refleja una crisis global que ya no podemos ignorar. Aunque algunos efectos son irreversibles, aún tenemos la oportunidad de cambiar el rumbo y proteger nuestro país. 
+<br>
+Uno de los problemas más graves es la deforestación, impulsada por la expansión agrícola, la construcción y la explotación de recursos naturales. Esto ha causado la pérdida de biodiversidad, erosión del suelo y contaminación del agua, afectando regiones como Guna Yala y el Darién. 
+<br>
+Además, la contaminación del agua se ha intensificado, afectando tanto al medio ambiente como a la salud humana. Entre sus principales causas están: 
+</p>
+</div>
+<br
+<!--tercera seccion-->
+<div class="process-container">
+    <div class="stage">
+         <div class="icon">
+          <img src="imagen5.png" alt="Icono" class="icono">
+         </div>
+         <p><strong>Desechos industriales: "Muchas industrias anteponen el dinero al ambiente, liberando desechos sin control y acelerando la contaminación del planeta."</strong></p>
+    </div>
+        <div class="stage">
+            <div class="icon">
+            <img src="imagen6.png" alt="Icono" class="icono">
+            </div>
+            <p><strong>Contaminación agrícola: "El uso excesivo de fertilizantes y pesticidas contamina el agua y causa eutrofización."</strong></p>
+    </div>
+        <div class="stage">
+            <div class="icon">
+            <img src="imagen7.png" alt="Icono" class="icono">
+            </div>
+            <p><strong>Desechos domésticos mal gestionados: "La mala gestión de desechos hace que muchos terminen en ríos, dañando los ecosistemas."</strong></p>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<!-- fin de la tercera seccion-->
+<!-- seccion cuatro-->
+<div class="seccion-hero-img">
+  <div class="seccion-hero-contenido">
+    <h1>¿Sabías Qué...?</h1>
+    <p>Cada año se desechan más de 50 millones de toneladas de basura electrónica en el mundo, y solo el 17% se recicla adecuadamente.
+    <br>Esto equivale al peso de casi 5.000 Torres Eiffel, contaminando suelos, ríos y afectando la salud de millones de personas, especialmente en países en desarrollo donde se desecha ilegalmente.
+    </p>
+  </div>
+</div>
+<br>
+<br>
+<!-- fin de la seccion cuatro-->
+<!-- seccion cinco-->
+<div class="titulos">
+ <strong> <p> Comunidades en Peligro: El Costo de Ignorar al Planeta </p></strong>
+</div>
+<div class="parrafos">
+  <p>Las comunidades que dependen de cuerpos de agua también sufren consecuencias graves. La contaminación puede comprometer el suministro de agua potable, causando enfermedades gastrointestinales y otras infecciones. </p>
+</div>
+<section class="compromiso">
+  <div class="texto">
+    <p>
+      <strong>Río Chagres</strong>
+      <br>
+ Este río es vital para el suministro de agua potable en la Ciudad de Panamá y la generación eléctrica en la planta hidroeléctrica
+ de Gatún. La contaminación, proveniente de desechos industriales y agrícolas, ha causado eutrofización y acumulación de sedimentos 
+ tóxicos, afectando tanto a los ecosistemas como al bienestar humano.
+    </p>
+  </div>
+  <div class="imagen">
+    <img src="imagen11.jpg" alt="Deforestación">
+  </div>
+</section>
+<div class="parrafos">
+  <p>Uno de los problemas más graves es la deforestación, impulsada por la expansión agrícola, la construcción y la explotación de recursos naturales. Esto ha causado la pérdida de biodiversidad, erosión del suelo y contaminación del agua, afectando regiones como Guna Yala y el Darién.  </p>
+</div>
+<br>
+<br>
+<br>
+<section class="video-lateral">
+  <div class="video-contenedor">
+    <video controls>
+      <source src="video.mp4" type="video/mp4">
+      Tu navegador no soporta la reproducción de video.
+    </video>
+  </div>
+  <div class="texto-contenedor">
+    <h2>Descubre que es la deforestación</h2>
+    <p>La deforestación es la eliminación o destrucción de grandes extensiones de bosques, generalmente causada por actividades humanas como la agricultura, la ganadería, la minería o la tala descontrolada. Este proceso no solo reduce la biodiversidad, sino que también contribuye al cambio climático y afecta directamente a comunidades que dependen de los recursos forestales para sobrevivir.</p>
+  </div>
+</section>
+<br>
+<br>
+<br>
+<!-- fin de la seccion cinco-->
+
+<br>
+<section class="separador-fondo"></section><!-- imagen del medio -->
+<br>
+<br>
+ <!--seccion seis -->
+ <div class="titulos">
+<strong><p>Cuando el agua deja de ser vida: impactos en nuestros ecosistemas</p></strong>
+ </div>
+ <div class="parrafos">
+<p>
+La contaminación del agua tiene efectos devastadores en los ecosistemas acuáticos. Los contaminantes alteran el equilibrio ecológico, afectan la biodiversidad y destruyen hábitats esenciales para la vida acuática. Especies de peces, plantas y microorganismos sufren las consecuencias, lo que puede llevar a la disminución de poblaciones y pérdida de biodiversidad. 
+Uno de los efectos más notorios es la eutrofización, provocada por el exceso de nutrientes como nitratos y fosfatos, que genera proliferación de algas nocivas. Estas algas bloquean la luz solar, reducen el oxígeno disuelto y deterioran la calidad del agua. 
+</p>
+ </div>
+ <section class="seccion6">
+  <div class="titulo-s6">Animales marinos en peligro de extinción</div>
+  <div class="contenedor-s6">
+
+    <div class="item-s6">
+      <img src="imagen16.png" alt="Vaquita marina">
+      <div class="texto-s6">La Vaquita marina está al borde de la extinción con menos de 10 ejemplares.</div>
+    </div>
+
+    <div class="item-s6">
+      <img src="imagen14.png" alt="Tortuga marina">
+      <div class="texto-s6">Las tortugas marinas sufren por la contaminación y la caza ilegal.</div>
+    </div>
+
+    <div class="item-s6">
+      <img src="imagen13.png" alt="ballenas">
+      <div class="texto-s6">La ballena azul, entre otras, está en peligro de extinción.</div>
+    </div>
+
+    <div class="item-s6">
+      <img src="imagen15.png" alt="corales">
+      <div class="texto-s6">Son un grupo marino muy amenazado, afectados por el cambio climático y otras amenazas.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- fin de la seccion 6-->
+ <!--Seccion del grafico-->
+ <section class="composicion-residuos">
+  <h2><strong>Composición de los Residuos en Panamá</strong></h2>
+  <div class="contenido">
+    <div class="grafico">
+      <canvas id="graficoResiduos" width="400" height="400"></canvas>
+    </div>
+    <div class="texto2">
+      <p><strong>Residuos Orgánicos (45%)</strong>: La mayor parte de los residuos en Panamá proviene de alimentos y otros materiales biodegradables, como restos de plantas. Esta es una de las mayores áreas donde podemos mejorar el reciclaje.</p>
+      <p><strong>Papel y Cartón (26%)</strong>: Estos materiales pueden ser reciclados de forma eficiente, reduciendo la necesidad de tala de árboles y el consumo de energía.</p>
+      <p><strong>Plástico (12%)</strong>: El plástico es uno de los mayores contaminantes en el mundo. Es fundamental aumentar su reciclaje y reducir su uso.</p>
+      <p><strong>Vidrio (8%)</strong>: Aunque el vidrio es reciclable, su presencia sigue siendo baja. Es importante fomentar su reciclaje para evitar su acumulación en vertederos.</p>
+      <p><strong>Metales (5%)</strong>: Los metales son valiosos y, a menudo, se pueden reutilizar. Reciclarlos ayuda a ahorrar recursos naturales y energía.</p>
+    </div>
+  </div>
+</section>
+
+ <!--Seccion del grafico-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="pagina_principal_js.js"></script>
+<!--ultima seccion supuestamente-->
+
+<!--comandos de teclas-->
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      window.scrollBy({ top: 100, behavior: 'smooth' });
+    } else if (event.key === 'ArrowUp') {
+      window.scrollBy({ top: -100, behavior: 'smooth' });
+    }
+  });
+</script>
+<!--comandos de teclas-->
+<script>
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowDown') {
+      window.scrollBy({ top: 100, behavior: 'smooth' });
+    } else if (event.key === 'ArrowUp') {
+      window.scrollBy({ top: -100, behavior: 'smooth' });
+    }
+  });
+</script>
+<!--fin de los comandos de teclas-------------------------------------------->
+<br>
+<!-- Sección de carrusel------------------------------------------------------------------------------------------- -->
+<section class="separador-fondo2"></section><!-- imagen del medio -->
+<!--fin de la seccion del carrusel-------------------------------------------------------------------------------->
+<br>
+<br>
+<!--seccion de cosas entretenidas para hacer-->
+<section id="interactive-section" class="interactive-section">
+  <h2 class="interactive-title"><strong>Sección Interactiva</strong></h2>
+  <div class="interactive-grid">
+    <div class="interactive-card">
+      <img src="imagen18.gif" alt="Imagen 1">
+      <a href="http://localhost/EXPO_2025/Pagina_principal2025/zona_quizz/zona_quizz.html" target="_blank"><h3>Quiz de conocimientos</h3></a>
+      <p>Descubre cuanto sabes sobre cuidado ambiental</p>
+    </div>
+    <div class="interactive-card">
+      <img src="imagen19.gif" alt="Imagen 2">
+      <a href="http://localhost/EXPO_2025/Pagina_principal2025/quizz_personalidad/personalidad_quizz.html" target="_blank"><h3>¿Qué soy?</h3></a>
+      <p>En base a tu personalidad, ¿Qué planta o animal eres?</p>
+    </div>
+    <div class="interactive-card">
+      <img src="imagen20.gif" alt="Imagen 3">
+      <a href="http://localhost/EXPO_2025/Pagina_principal2025/datos_curiosos/datos_curiosos/datos_curiosos.html" target="_blank"><h3> Datos curiosos</h3></a>
+      <p>Conoce datos que no creias posible.</p>
+    </div>
+    <div class="interactive-card">
+      <img src="imagen21.gif" alt="Imagen 4">
+      <a href="http://localhost/EXPO_2025/Pagina_principal2025/panfletos/panfletos.html" target="_blank"><h3>Panfletos informativos</h3></a>
+      <p>Guías ilustradas sobre ambiente.</p>
+    </div>
+    <div class="interactive-card">
+      <img src="imagen22.gif" alt="Imagen 5">
+      <a href="http://localhost/EXPO_2025/Pagina_principal2025/puzzles/puzzles.html" target="_blank"><h3>Puzzles</h3></a>
+      <p>Arrastra y diviertete.</p>
+    </div>
+    <div class="interactive-card">
+      <img src="imagen23.gif" alt="Imagen 6">
+      <a href="https://ejemplo6.com" target="_blank"><h3>¿Qué tan buena es tu memoria?</h3></a>
+      <p>memoria.</p>
+    </div>
+  </div>
+</section>
+
+<!--seccion de cosas entretenidas para hacer-->
+<!--ultima seccion supuestamente-->
+<section class="seccion-conclusion">
+  <div class="contenido-conclusion">
+    <h2>¡La Tierra nos necesita!</h2>
+    <p>"Nuestro planeta está pidiendo ayuda. Las acciones destructivas del ser humano han tenido un impacto negativo en la naturaleza. Pero aún estamos a tiempo de revertir los daños. Actuar con conciencia ecológica puede ser el primer paso hacia la restauración y preservación de nuestra Tierra."</p>
+  </div>
+</section>
+
+<!--inicio del chatbot-->
+<!-- Botón flotante para abrir el chat -->
+<button id="chat-toggle">
+  <img src="GaiaBot.png" alt="GaiaBot" />
+</button>
+
+<!-- Contenedor del chatbot -->
+<div id="chat-container" style="display:none; flex-direction: column;">
+  <div id="chat-header">🌿 GaiaBot</div>
+  <div id="chat-messages">
+    <div class="message bot">Hola, soy GaiaBot. ¿En qué puedo ayudarte hoy? 🌎</div>
+  </div>
+  <div id="chat-input">
+    <input type="text" id="user-input" placeholder="Escribe tu mensaje..." />
+    <button id="send-button">Enviar</button>
+  </div>
+  <div id="suggestions">
+    <button onclick="sendSuggestion('¿Cómo puedo cuidar el agua?')">¿Cómo puedo cuidar el agua?</button>
+    <button onclick="sendSuggestion('¿Qué es la huella de carbono?')">¿Qué es la huella de carbono?</button>
+    <button onclick="sendSuggestion('¿Qué es reciclaje?')">¿Qué es reciclaje?</button>
+  </div>
+</div>
+
+<script>
+  // Variables para elementos DOM
+  const toggleBtn = document.getElementById("chat-toggle");
+  const chatContainer = document.getElementById("chat-container");
+  const chatMessages = document.getElementById("chat-messages");
+  const userInput = document.getElementById("user-input");
+  const sendBtn = document.getElementById("send-button");
+
+  // Abrir/cerrar el chat
+  toggleBtn.addEventListener("click", () => {
+    if (chatContainer.style.display === "none" || chatContainer.style.display === "") {
+      chatContainer.style.display = "flex";
+      userInput.focus();
+    } else {
+      chatContainer.style.display = "none";
+    }
+  });
+
+  // Enviar mensaje con botón
+  sendBtn.addEventListener("click", sendMessage);
+
+  // Enviar mensaje con Enter
+  userInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") sendMessage();
+  });
+
+  // Enviar mensaje
+  function sendMessage() {
+    const text = userInput.value.trim();
+    if (text === "") return;
+
+    appendMessage("user", text);
+    userInput.value = "";
+
+    // Simular respuesta del bot con delay
+    setTimeout(() => {
+      const reply = getBotReply(text);
+      appendMessage("bot", reply);
+    }, 500);
+  }
+
+  // Agregar mensajes al chat y hacer scroll automático
+  function appendMessage(sender, message) {
+    const div = document.createElement("div");
+    div.classList.add("message", sender);
+
+    // Insertar como HTML si incluye imagen
+    if (message.includes('<img')) {
+      div.innerHTML = message;
+    } else {
+      div.textContent = message;
+    }
+
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight; // Auto-scroll
+  }
+
+  // Preguntas sugeridas
+  function sendSuggestion(text) {
+    userInput.value = text;
+    sendMessage();
+  }
+
+  // Lógica de respuestas automáticas
+  
+  function getBotReply(input) {
+  const lower = input.toLowerCase();
+
+  // Agua y conservación
+  if (lower.includes("agua") || lower.includes("cuidar el agua") || lower.includes("ahorro de agua")) {
+    return "Puedes cuidar el agua cerrando grifos, usando duchas cortas, recogiendo agua de lluvia y evitando el desperdicio. 💧";
+  }
+  if (lower.includes("hola")) return "¡Hola! ¿En qué te puedo ayudar?";
+  // Reciclaje
+  if (lower.includes("reciclaje") || lower.includes("reciclar")) {
+    return "El reciclaje es el proceso de transformar residuos en nuevos productos para reducir la contaminación. ♻️ Separa tus residuos y recicla correctamente.";
+  }
+
+  // Huella de carbono y cambio climático
+  if (lower.includes("huella de carbono") || lower.includes("cambio climático") || lower.includes("calentamiento global")) {
+    return "La huella de carbono mide los gases de efecto invernadero que generamos. Reducirla ayuda a mitigar el cambio climático que está calentando el planeta. 🌍";
+  }
+
+  // Contaminación
+  if (lower.includes("contaminación") || lower.includes("contaminantes")|| lower.includes("contaminacion") || lower.includes("aire sucio")) {
+    return "La contaminación afecta la salud y el medio ambiente. Puedes ayudar evitando quemas, usando transporte público y reduciendo plásticos de un solo uso.";
+  }
+
+  // Deforestación
+  if (lower.includes("deforestación") || lower.includes("bosques")|| lower.includes("arboles") || lower.includes("árboles")) {
+    return "La deforestación provoca pérdida de biodiversidad y afecta el clima. Planta árboles y apoya proyectos de reforestación. 🌳";
+  }
+
+  // Biodiversidad
+  if (lower.includes("biodiversidad") || lower.includes("animales") || lower.includes("especies")) {
+    return "La biodiversidad es la variedad de vida en el planeta y es vital para el equilibrio ecológico. Protejamos a los animales y sus hábitats.";
+  }
+
+  // Energías renovables
+  if (lower.includes("energía renovable")|| lower.includes("energia") || lower.includes("solar") || lower.includes("eólica")) {
+    return "Las energías renovables, como la solar y eólica, son limpias y ayudan a reducir la dependencia de combustibles fósiles contaminantes.";
+  }
+
+  // Cambio de hábitos
+  if (lower.includes("qué puedo hacer") || lower.includes("cómo ayudar") || lower.includes("cambiar hábitos")) {
+    return "Pequeños cambios como usar menos plástico, separar basura, ahorrar agua y energía, y usar transporte sostenible hacen una gran diferencia.";
+  }
+
+  // Objetivo del proyecto / chatbot
+  if (lower.includes("objetivo") || lower.includes("meta")) {
+    return "Nuestro objetivo es promover la conciencia ambiental, educar y apoyar prácticas sostenibles para cuidar nuestro planeta. 🌿";
+  }
+
+  // Políticas de privacidad
+  if (lower.includes("política de privacidad") || lower.includes("privacidad")) {
+    return "Puedes consultar nuestra Política de Privacidad en la sección correspondiente de nuestra página para entender cómo protegemos tus datos.";
+  }
+
+  // Creadores / equipo
+  if (lower.includes("creadores") || lower.includes("equipo") || lower.includes("quiénes son")) {
+    return "GaiaBot fue creado por un equipo apasionado por la tecnología y el medio ambiente, con la misión de ayudarte a cuidar nuestro planeta. Este grandioso equipo tiene como nombre StellarisNova!!";
+  }
+
+  // Contacto
+  if (lower.includes("contacto") || lower.includes("cómo contactarlos") || lower.includes("comunicación")) {
+    return "Puedes contactarnos por correo electrónico a contacto@gaia.com o a través de nuestras redes sociales oficiales.";
+  }
+
+  // Horarios
+  if (lower.includes("horario") || lower.includes("atención") || lower.includes("disponibilidad")) {
+    return "Estamos disponibles 24/7 para responder tus dudas y ayudarte en todo lo que necesites.";
+  }
+
+  // Educación ambiental
+  if (lower.includes("educación ambiental") || lower.includes("aprender sobre el ambiente")) {
+    return "Ofrecemos recursos y consejos para aprender sobre el cuidado ambiental, reciclaje, energías renovables y más.";
+  }
+
+  // Proyectos ambientales
+  if (lower.includes("proyectos") || lower.includes("iniciativas") || lower.includes("acciones")) {
+    return "Apoyamos y promovemos proyectos escolares y comunitarios para mejorar el medio ambiente, como reciclaje y reforestación.";
+  }
+
+  // Uso responsable de recursos
+  if (lower.includes("recursos naturales") || lower.includes("uso responsable")) {
+    return "El uso responsable de recursos como agua, energía y materiales reduce el impacto ambiental y ayuda a conservar el planeta.";
+  }
+
+  // Voluntariado y participación
+  if (lower.includes("voluntariado") || lower.includes("participar") || lower.includes("cómo ayudar")) {
+    return "Puedes participar en actividades de voluntariado ambiental en tu comunidad, escuelas y organizaciones locales.";
+  }
+
+  // Plásticos y basura
+  if (lower.includes("plásticos") || lower.includes("basura") || lower.includes("residuos")) {
+    return "Reducir el uso de plásticos de un solo uso y separar correctamente los residuos ayuda a disminuir la contaminación.";
+  }
+
+  // Energía y ahorro
+  if (lower.includes("ahorro de energía") || lower.includes("electricidad")) {
+    return "Apaga luces y aparatos que no uses, utiliza bombillas LED y aprovecha la luz natural para ahorrar energía.";
+  }
+
+  // Cambio climático y soluciones
+  if (lower.includes("soluciones cambio climático") || lower.includes("cómo combatir el cambio climático")) {
+    return "Podemos combatir el cambio climático usando energías renovables, reciclando, plantando árboles y cambiando hábitos diarios.";
+  }
+
+  // Mensajes de cortesía
+  if (lower.includes("gracias") || lower.includes("thank you")) {
+    return "¡De nada! Estoy aquí para ayudarte siempre que lo necesites. 🌿";
+  }
+  if (lower.includes("adiós") || lower.includes("hasta luego") || lower.includes("nos vemos")) {
+    return "¡Hasta luego! Que tengas un gran día cuidando el planeta. 🌍";
+  }
+
+  // Respuesta por defecto
+  return "Lo siento, aún estoy aprendiendo.  ¿Podrías reformular tu pregunta o ser más específico?";
+}
+
+</script>
+<!--fin del chatbot-->
+<!-- inicio del footer -->
+
+  <footer class="footer">
+    <!-- Forma irregular en la parte superior -->
+
+ 
+    <div class="footer-background">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>WE ARE</h3>
+          <ul>
+            <li><i class="fas fa-user" style="font-size: 16px; color: #fff;  margin-right: 5px"> </i><a href="#">Stellaris Nova</a></li>
+            <li><i class="fas fa-map-marker-alt" style="font-size: 16px; color: #fff;  margin-right: 5px"> </i><a href="#">42FM+4J Canto del Llano</a></li>
+            <li><i class="fas fa-phone-alt" style="font-size: 16px; color: #fff;  margin-right: 5px"> </i><a href="#">9067-8900</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>ABOUT US</h3>
+          <ul>
+            <li><i class="fab fa-instagram" style="font-size: 16px; color: #fff;  margin-right: 5px"> </i><a href="#">Instagram</a></li>
+            <li><i class="fas fa-users" style="font-size: 16px; color: #fff;  margin-right: 5px"> </i><a href="#">Learn more</a></li>
+            <li><i class="fas fa-lock" style="font-size: 16px; color: #fff;  margin-right: 5px"> </i><a href="#">Privacy Polite</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="footer-bottom">
+        <p> </p>
+        <a href="#"></a>
+      </div>
+    </div>
+
+  </footer>
+<!-- fin del footer -->
+</body>
+

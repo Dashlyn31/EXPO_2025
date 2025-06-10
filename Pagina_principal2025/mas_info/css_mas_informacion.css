@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f5eb;
+    color: #333;
+  }
+  
+  /* --- Sección de Más Información --- */
+  .informacion-general {
+    background-color:  #f8f5eb;
+    padding: 60px 20px;
+  }
+  
+  .contenedor {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  
+  .titulo {
+    font-size: 3.5rem;
+    color: #5b4a2f;
+    text-align: center;
+    margin-bottom: 40px;
+    font-family:  "Marko One", sans-serif;
+  }
+  
+  .descripcion {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #1e5c22;
+    font-family:  "Poppins", sans-serif;
+  }
+  
+  .bloques {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+  
+  .bloque {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .bloque:hover {
+    transform: translateY(-5px);
+  }
+  
+  .bloque h3 {
+    color: #5b4a2f;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-family:  "Marko One", sans-serif;
+  }
+  
+  .bloque p{
+    color: #000000;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .bloque ul {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .bloque ul {
+    padding-left: 20px;
+  }
+  
+  .bloque a {
+    color: #012e71;
+    text-decoration: none;
+  }
+  
+  .bloque a:hover {
+    text-decoration: underline;
+  }
+  /* Contenedor para el logo */
+.logo-container {
+    text-align: center; /* Centra la imagen horizontalmente */
+    margin-bottom: 10px; /* Espacio debajo de la imagen */
+  }
+  
+  .logo {
+    width: 250px; /* Ajusta el tamaño de la imagen, puedes modificar este valor */
+    height: auto; /* Mantiene la proporción original de la imagen */
+  }
+  /* barra de navegacion vertical----------------------------------------------------------------------------------*/
+/* barra de navegacion vertical----------------------------------------------------------------------------------*/
+.subtitulo {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+  /* Título del encabezado */
+header h1 {
+  margin-top: 10px;
+  font-size: 3.0em;
+  color: #808000; /* Puedes cambiar si tu fondo es muy claro */
+  font-family: "Marko One", sans-serif;
+  letter-spacing: 5px; /* Aumenta el espacio entre letras */
+}
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra horizontalmente */
+  padding: 15px;
+  text-align: center; /* Asegura que el texto también quede centrado */
+  font-family: "Poppins", sans-serif;
+  
+}
+
+#profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  background-color: #ccc;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -260px;
+  width: 255px;
+  height: 100%;
+  background-color: #685e4a;
+  color: white;
+  transition: 0.3s;
+  padding-top: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  z-index: 1000;
+  overflow-y: auto;  /*es para que sea mas para abajo */
+}
+
+
+.sidebar.active {
+  left: 0;
+}
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+}
+
+/* Botón de cierre (tres puntos) */
+.contenedor-close-boton {
+  text-align: right;
+  padding-right: 5px;
+}
+
+.close-btn {
+  font-size: 24px;
+  cursor: pointer;
+  color: white;               /* Ícono en blanco */
+  background-color: #685e4a;  /* Fondo marrón */
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+
+.profile-section {
+  text-align: center;
+  padding: 15px;
+}
+
+#profile-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+}
+
+#profile-upload {
+  display: none; /* Oculta input real */
+}
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #555;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: #666;
+}
+
+#user-account {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 10px 20px;
+}
+
+.sidebar-menu li {
+  margin: 15px 0;
+}
+
+.sidebar-menu a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 8px;
+  border-radius: 4px;
+  font-family:"Poppins", sans-serif; /*-------------------------------fuente de la barra lateral*/
+  
+}
+
+.sidebar-menu a:hover {
+  background-color: #444;
+}
+/*fin de la barra de navegacion*/

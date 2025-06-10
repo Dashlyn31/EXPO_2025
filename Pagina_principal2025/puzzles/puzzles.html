@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+    body {
+      font-family: 'Poppins', Arial, sans-serif;
+      background: linear-gradient(to bottom, #f8f5eb 50%, #2eb7f7 100%);
+      text-align: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* --- Sección Título animado --- */
+    #titulo-juego {
+      font-size: 3em;
+      font-weight: 700;
+      color: #2e2f30;
+      margin-bottom: 15px;
+      position: relative;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      user-select: none;
+      text-shadow: 2px 2px 6px #1a73e8;
+      font-family: "Marko One", sans-serif;
+    }
+
+    #subtitulo-juego {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      color: #317fba;
+      letter-spacing: 2px;
+      font-style: italic;
+      animation: fadeInUp 1.5s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+
+    .items {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+   .item {
+  width: 80px;
+  height: 80px;
+  border: 2px dashed #000000;
+  border-radius: 10px;
+  background-color: #dfa959;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  cursor: grab;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatBounce 3s ease-in-out infinite;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.item:hover {
+  transform: scale(1.15);
+  box-shadow: 0 10px 15px rgba(0,0,0,0.25);
+  cursor: grabbing;
+  animation-play-state: paused; /* Pausa la animación al hover para no distraer */
+}
+
+@keyframes floatBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  50% {
+    transform: translateY(-10px) rotate(3deg);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  }
+}
+
+    .item:active {
+      transform: scale(1.1);
+      cursor: grabbing;
+    }
+
+    .dropzone {
+      width: 500px;
+      height: 200px;
+      background-color: #e0f7e9;
+      border: 3px dashed #4caf50;
+      border-radius: 15px;
+      padding: 10px;
+      transition: background-color 0.4s ease;
+    }
+    .dropzone.trash {
+      background-color: #ffeaea;
+      border-color: #d32f2f;
+    }
+    .dropzone:hover {
+      background-color: #c3e8c4;
+    }
+
+    .dropzone.trash:hover {
+      background-color: #f9c7c7;
+    }
+
+    .dropzone h3 {
+      margin-top: 0;
+      user-select: none;
+      font-family: "Marko One", sans-serif;
+    }
+
+    .zones {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .zone-content {
+      min-height: 100px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #message {
+      margin-top: 0;
+      font-weight: bold;
+      font-size: 1.3em;
+      min-height: 2em;
+      transition: color 0.4s ease;
+      user-select: none;
+      font-family: "Marko One", sans-serif;
+    }
+    #score {
+      margin-top: 10px;
+      font-size: 1.4em;
+      color: #1b5e20;
+      user-select: none;
+    }
+
+    #restart {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+      font-family: 'Poppins', Arial, sans-serif;
+    }
+    #restart:hover {
+      background-color: #388e3c;
+    }
+
+    /* Animación de vibración para mensajes de error */
+    .vibrate {
+      animation: vibrate 0.3s linear 3;
+    }
+    @keyframes vibrate {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-5px); }
+      40% { transform: translateX(5px); }
+      60% { transform: translateX(-5px); }
+      80% { transform: translateX(5px); }
+      100% { transform: translateX(0); }
+    }
+    #seccion-inspiradora {
+      background-color: #a0d8f7;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #034f84;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 9999;
+      }
+
+  </style>
+</head>
+<body>
+<div id="seccion-inspiradora" style="background-color: #a0d8f7; padding: 15px; text-align: center; font-size: 1.3rem; font-weight: bold; color: #034f84; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <i class="fas fa-leaf"></i> "Cada pequeña acción cuenta para salvar nuestro planeta. ¡Juega, aprende y cuida la Tierra!" <i class="fas fa-globe-americas"></i>
+</div>
+<br>
+<br>
+<br>
+  <!-- Título animado -->
+  <div id="titulo-juego"><i class="fas fa-globe-americas"></i> ¡ Juega y protege ! <i class="fas fa-leaf"></i></div>
+  <div id="subtitulo-juego">Arrastra cada ícono a su lugar correcto y salva el planeta</div>
+
+  <div class="items" id="items">
+    <div class="item" draggable="true" id="planta" data-categoria="verde">🌿</div>
+    <div class="item" draggable="true" id="abeja" data-categoria="verde">🐝</div>
+    <div class="item" draggable="true" id="pez" data-categoria="verde">🐟</div>
+    <div class="item" draggable="true" id="basura" data-categoria="basura">🗑️</div>
+    <div class="item" draggable="true" id="humo" data-categoria="basura">💨</div>
+  </div>
+
+  <div class="zones">
+    <div class="dropzone" id="zonaVerde" data-tipo="verde">
+      <h3>
+      <i class="fas fa-tree" style="margin-right: 8px;"></i>
+      Zona Verde
+      <i class="fas fa-tree" style="margin-left: 8px;"></i>
+</h3>
+
+      <div class="zone-content" id="contenidoVerde"></div>
+    </div>
+
+    <div class="dropzone trash" id="zonaBasura" data-tipo="basura">
+        <h3><i class="fas fa-trash-alt" style="margin-right: 8px;"></i>
+        Basurero
+        <i class="fas fa-trash-alt" style="margin-left: 8px;"></i></h3>
+      <div class="zone-content" id="contenidoBasura"></div>
+    </div>
+  </div>
+
+  <div id="message"></div>
+  <div id="score">Puntos: 0/5</div>
+  <button id="restart"><i class="fas fa-rotate-right" style="margin-right: 6px;"></i> Reiniciar juego</button>
+
+  <script>
+const originalItems = [
+  { id: 'planta', emoji: '🌿', categoria: 'verde' },
+  { id: 'abeja', emoji: '🐝', categoria: 'verde' },
+  { id: 'pez', emoji: '🐟', categoria: 'verde' },
+  { id: 'mariposa', emoji: '🦋', categoria: 'verde' },
+  { id: 'árbol', emoji: '🌳', categoria: 'verde' },
+  { id: 'flor', emoji: '🌸', categoria: 'verde' },
+  { id: 'tortuga', emoji: '🐢', categoria: 'verde' },
+  
+  { id: 'basura', emoji: '🗑️', categoria: 'basura' },
+  { id: 'humo', emoji: '💨', categoria: 'basura' },
+  { id: 'lata', emoji: '🥫', categoria: 'basura' },
+  { id: 'bolsa', emoji: '🛍️', categoria: 'basura' },
+  { id: 'papel', emoji: '📄', categoria: 'basura' },
+];
+
+  let puntuacion = 0;
+  const puntuacionMaxima = 5;
+  let colocadosCorrectamente = new Set();
+  let errores = 0;
+  const maxErrores = 3;
+
+  const itemsContainer = document.getElementById('items');
+  const zonas = document.querySelectorAll('.dropzone');
+  const message = document.getElementById('message');
+  const scoreDisplay = document.getElementById('score');
+  const btnReiniciar = document.getElementById('restart');
+  const titulo = document.getElementById('titulo-juego');
+  const subtitulo = document.getElementById('subtitulo-juego');
+
+  function crearItems() {
+    itemsContainer.innerHTML = '';
+    originalItems.forEach(({ id, emoji, categoria }) => {
+      const div = document.createElement('div');
+      div.className = 'item';
+      div.id = id;
+      div.textContent = emoji;
+      div.setAttribute('draggable', 'true');
+      div.setAttribute('data-categoria', categoria);
+      div.addEventListener('dragstart', e => {
+        e.dataTransfer.setData('text/plain', id);
+      });
+      itemsContainer.appendChild(div);
+    });
+  }
+
+  zonas.forEach(zona => {
+    zona.addEventListener('dragover', e => e.preventDefault());
+
+    zona.addEventListener('drop', e => {
+      e.preventDefault();
+      if (puntuacion === puntuacionMaxima || errores >= maxErrores) return; // Bloquea si el juego terminó
+
+      const id = e.dataTransfer.getData('text/plain');
+      const item = document.getElementById(id);
+
+      if (!item) return; // Si ya no existe el item (ya fue colocado), no hacer nada
+
+      const categoria = item.getAttribute('data-categoria');
+      const tipoZona = zona.getAttribute('data-tipo');
+
+      if (categoria === tipoZona && !colocadosCorrectamente.has(id)) {
+        const clonado = item.cloneNode(true);
+        clonado.setAttribute('draggable', 'false');
+        clonado.classList.remove('item');
+        clonado.classList.add('item-colocado'); // Clase para animar
+        zona.querySelector('.zone-content').appendChild(clonado);
+
+        // Animación de aparición suave
+        clonado.style.opacity = '0';
+        setTimeout(() => {
+          clonado.style.transition = 'opacity 0.5s ease-in';
+          clonado.style.opacity = '1';
+        }, 10);
+
+        // Remueve el item original para que no se pueda arrastrar otra vez
+        item.remove();
+
+        colocadosCorrectamente.add(id);
+        puntuacion++;
+        mostrarMensajeCorrecto(id);
+      } else if (categoria !== tipoZona && !colocadosCorrectamente.has(id)) {
+        errores++;
+        mostrarMensajeError();
+        vibrarMensaje();
+      }
+
+      actualizarEstado();
+    });
+  });
+
+  function reiniciarJuego() {
+    puntuacion = 0;
+    errores = 0;
+    colocadosCorrectamente = new Set();
+
+    // Limpia las zonas destino
+    document.getElementById('contenidoVerde').innerHTML = '';
+    document.getElementById('contenidoBasura').innerHTML = '';
+
+    // Limpia y recrea los items originales en el contenedor
+    crearItems();
+
+    // Reset mensajes y puntuación
+    scoreDisplay.textContent = `Puntos: 0 / ${puntuacionMaxima}`;
+    message.textContent = '';
+    titulo.style.color = '#2eb7f7';
+    titulo.textContent = '🌎 ¡Juega y protege! 🌿';
+    subtitulo.textContent = 'Arrastra cada ícono a su lugar correcto y salva el planeta';
+  }
+
+  function mostrarMensajeCorrecto(id) {
+    message.style.color = 'green';
+    if (id === 'planta' || id === 'abeja' || id === 'pez') {
+      message.textContent = `¡Perfecto! ${originalItems.find(i => i.id === id).emoji} va a la Zona Verde.`;
+    } else {
+      message.textContent = `¡Correcto! ${originalItems.find(i => i.id === id).emoji} al Basurero.`;
+    }
+  }
+
+  function mostrarMensajeError() {
+    message.style.color = 'red';
+    message.textContent = `¡Ups! Esa pieza no va ahí. Errores: ${errores} de ${maxErrores}`;
+  }
+
+  function vibrarMensaje() {
+    message.classList.add('vibrate');
+    setTimeout(() => message.classList.remove('vibrate'), 900);
+  }
+
+  function actualizarEstado() {
+    scoreDisplay.textContent = `Puntos: ${puntuacion} / ${puntuacionMaxima}`;
+    if (puntuacion === puntuacionMaxima) {
+      message.style.color = '#2e7d32';
+      message.textContent = '🎉 ¡Ganaste! Salvaste el planeta con éxito.';
+      bloquearJuego();
+    } else if (errores >= maxErrores) {
+      message.style.color = '#b71c1c';
+      message.textContent = '❌ ¡Perdiste! Intenta de nuevo y ayuda al planeta.';
+      bloquearJuego();
+    }
+  }
+
+  function bloquearJuego() {
+    // Desactiva todos los items (si quedan)
+    document.querySelectorAll('.item').forEach(el => el.setAttribute('draggable', 'false'));
+
+    if (puntuacion === puntuacionMaxima) {
+      titulo.style.color = '#2e7d32';
+      titulo.textContent = '🌟 ¡Felicidades, Héroe Verde! 🌟';
+      subtitulo.textContent = 'Gracias por cuidar nuestro planeta.';
+    } else {
+      titulo.style.color = '#b71c1c';
+      titulo.textContent = '😞 Juego terminado';
+      subtitulo.textContent = 'Recarga la página para intentar de nuevo.';
+    }
+  }
+
+  btnReiniciar.addEventListener('click', reiniciarJuego);
+
+  // Inicializa el juego al cargar
+  crearItems();
+</script>
+
+</body>
+</html>

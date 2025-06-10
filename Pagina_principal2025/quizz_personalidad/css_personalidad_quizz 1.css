@@ -1,0 +1,210 @@
+body {
+  background-color: #f8f5eb;
+}
+.titulo h1 {
+  font-family: "Marko One", sans-serif;
+  font-size: 4rem; 
+  color: #2E4639;
+}
+#quizzes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* espacio entre tarjetas */
+  justify-content: center; /* centra filas */
+}
+
+.quiz-card {
+  display: flex;
+  flex-direction: column; /* apilar verticalmente */
+  align-items: center; /* centrar contenido */
+  width: 30%; /* un poco más ancho */
+  box-sizing: border-box;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+}
+
+.quiz-card h2 {
+  margin: 0 0 15px 0;
+  font-size: 1.4rem;
+  text-align: center;
+  font-family: "Marko One", sans-serif;
+  color: #5b4a2f;
+}
+
+.quiz-card img {
+  width: 300px;      /* ancho fijo */
+  height: 160px;     /* alto fijo */
+  object-fit: cover; /* recorta sin deformar */
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.quiz-card button {
+  padding: 10px 18px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 6px;
+  border: none;
+  background-color: #808000;
+  color: white;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+}
+
+.quiz-card button:hover {
+  background-color: #2E4639;
+}
+
+@media (max-width: 768px) {
+  .quiz-card {
+    width: 90%;
+  }
+}
+
+
+#quiz-box h2 {
+  color: #004d73;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: "Marko One", sans-serif;
+  font-size: 20px;
+}
+
+#quiz-box p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  font-family:  'Poppins', sans-serif;
+
+}
+
+#quiz-box div > button {
+  background-color: #808000; /*cambia los botones*/
+  border: none;
+  color: white;
+  padding: 10px 18px;
+  margin: 6px 6px 6px 0;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  min-width: 120px;
+}
+
+#quiz-box div > button:hover:not(:disabled) {
+  background-color: #007acc; /*cambio de fondo de las opciones*/
+}
+
+#quiz-box div > button:disabled {
+  background-color: #a0c4ff;
+  cursor: not-allowed;
+}
+
+#quiz-box button:last-child() {
+  margin-top: 25px;
+  background-color: #ff0c0c;
+  width: 100%;
+  font-size: 1.1rem;
+}
+
+#quiz-box button:last-child:hover {
+  background-color: #005f99;
+}
+#quiz-box {
+    display: none;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    font-family:  'Poppins', sans-serif;
+  }
+
+  .options-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 columnas iguales */
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .options-container button {
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .correct {
+    background-color: #c8e6c9;
+    border: 2px solid #388e3c;
+  }
+
+  .incorrect {
+    background-color: #ffcdd2;
+    border: 2px solid #d32f2f;
+  }
+
+  .nav-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .nav-buttons button {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+.nav-buttons button:first-child {
+  background-color: #ccc;     /* Anterior: gris */
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-buttons button:last-child {
+  background-color: #007acc;  /* Siguiente: azul */
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-buttons button:first-child:hover {
+  background-color: #aaa;
+}
+
+.nav-buttons button:last-child:hover {
+  background-color: #005f99;
+}
+/*boton de volver -------------------------------*/
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 45px;
+  background-color: #808000;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, opacity 0.3s;
+  z-index: 2000;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}

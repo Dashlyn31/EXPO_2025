@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\service\css_service.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Botón flotante para abrir la barra lateral -->
+<div id="menu-toggle" style="position: fixed; top: 15px; left: 15px; z-index: 1100;">
+  <button onclick="toggleSidebar()" style="font-size: 28px; background: none; border: none; color: #000000; cursor: pointer;">≡</button>
+</div>
+  <!-- Barra lateral -->
+<div class="sidebar" id="sidebar">
+    <div class="contenedor-close-boton">
+    <div class="close-btn" onclick="toggleSidebar()">
+      <i class="fas fa-times"></i> <!-- Icono X de Font Awesome -->
+    </div>
+  </div>
+  <div class="profile-section">
+    <img src="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\bases de la pagina\icono_usuario.webp" alt="Imagen de perfil" id="profile-img">
+
+    <label for="profile-upload" class="upload-btn">Cambiar imagen</label>
+    <input type="file" id="profile-upload" accept="image/*" onchange="changeProfileImage()" />
+
+    <p id="user-account">Cuenta: <span id="account-name"></span></p>
+  </div>
+
+  <ul class="sidebar-menu">
+    <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\politicas\politicas.html">Políticas de privacidad</a></li>
+    <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\mas_info\mas_informacion.html">Más información</a></li>
+    <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\service\service.html">Servicio</a></li>
+    <li><a href="">Registrarse / Iniciar sesión</a></li>
+    <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+    <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\principal\pagina_principal.html">Volver</a></li>
+  </ul>
+</div>
+
+<script>
+  function toggleSidebar() {
+    const sidebar = document.getElementById("sidebar");
+    const menuToggle = document.getElementById("menu-toggle");
+
+    sidebar.classList.toggle("active");
+
+    // Mostrar u ocultar el botón flotante según el estado
+    if (sidebar.classList.contains("active")) {
+      menuToggle.style.display = "none";
+    } else {
+      menuToggle.style.display = "block";
+    }
+  }
+
+  function changeProfileImage() {
+    const fileInput = document.getElementById("profile-upload");
+    const file = fileInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("profile-img").src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+  function cerrarSesion() {
+    alert("Has cerrado sesión exitosamente.");
+    window.location.href = "c:\\Users\\HP\\Documents\\Pagina principal ´25\\index.html";
+  }
+</script>
+<!--fin de la barra lateral-->
+  <section class="servicios-tecnicos">
+    <div class="contenedor">
+      <h2 class="titulo">Centro de Ayuda y Servicios</h2>
+      <p class="descripcion">¿Tienes un problema? Aquí encuentras soluciones rápidas y configuraciones esenciales.</p>
+      <div class="cards">
+        <a href="#configuracion" class="card">
+          <i class="fas fa-cog"></i>
+          <h3>Configuración</h3>
+          <p>Aprende a personalizar tu perfil, cambiar contraseñas y ajustar preferencias.</p>
+        </a>
+        <a href="#conexion" class="card">
+          <i class="fas fa-wifi"></i>
+          <h3>Conexión y acceso</h3>
+          <p>¿No puedes ingresar? Sigue nuestros pasos para recuperar el acceso fácilmente.</p>
+        </a>
+        <a href="#errores" class="card">
+          <i class="fas fa-bug"></i>
+          <h3>Errores comunes</h3>
+          <p>Soluciona problemas frecuentes como carga lenta, errores 404, etc.</p>
+        </a>
+        <a href="#soporte" class="card">
+          <i class="fas fa-life-ring"></i>
+          <h3>Soporte técnico</h3>
+          <p>Contacta con nuestro equipo si necesitas ayuda personalizada.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="soluciones">
+    <div class="contenedor">
+      <h3 id="configuracion">Configuración</h3>
+      <p>Para cambiar tu contraseña, dirígete a tu perfil y selecciona "Seguridad". Ahí podrás actualizar tus credenciales. También puedes ajustar tus preferencias de notificación y visibilidad en la sección "Preferencias". Si no ves los cambios, actualiza tu navegador o borra la caché.</p>
+
+      <h3 id="conexion">Conexión y acceso</h3>
+      <p>Si no puedes acceder a tu cuenta, asegúrate de que estás ingresando el correo correcto. Usa la opción “¿Olvidaste tu contraseña?” para recuperarla. Verifica tu conexión a internet y prueba ingresar desde otro dispositivo o navegador.</p>
+
+      <h3 id="errores">Errores comunes</h3>
+      <p>Si ves errores como “Página no encontrada (404)” o “Error interno del servidor”, espera unos minutos e intenta de nuevo. Asegúrate de no estar usando un enlace antiguo. Si el error persiste, repórtalo con una captura de pantalla.</p>
+
+      <h3 id="soporte">Soporte técnico</h3>
+      <p>Si ninguna de las soluciones anteriores funciona, puedes contactar al soporte técnico desde la sección “Contáctanos”. Proporciónanos tu nombre de usuario, una descripción del problema y una captura si es posible. Responderemos en menos de 24 horas.</p>
+    </div>
+  </section>
+</body>
+</html>

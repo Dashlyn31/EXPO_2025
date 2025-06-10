@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\quizz_personalidad\css_personalidad_quizz 1.css" rel="stylesheet" />
+<title>Quizzes en base a tu personalidad</title>
+<br>
+<br>
+<!-- boton de volver-->
+  <a href="http://localhost/EXPO_2025/Pagina_principal2025/principal/pagina_principal.html#interactive-section" class="back-button">
+  <i class="fas fa-arrow-left"></i> Volver
+</a>
+<script>
+  const backButton = document.querySelector('.back-button');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      backButton.classList.add('hidden');
+    } else {
+      backButton.classList.remove('hidden');
+    }
+  });
+</script>
+<br>
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link href="css_personalidad_quizz 1.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  
+</head>
+<body>
+<div class="titulo"><h1><center>Quizzes en base a tu personalidad</center></h1></div>
+<div id="quizzes">
+  <div class="quiz-card">
+    <h2>¿Qué planta refleja tu forma de pensar?</h2>
+    <img src="imagen36.jpg" alt="imagen36
+    " width="300" height="160" />
+    <button onclick="startQuiz(0)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>¿Qué planta representa tu forma de cuidar?</h2>
+    <img src="imagen37.jpg" alt="imagen37" width="300" height="160" />
+    <button onclick="startQuiz(1)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>¿Qué animal representa tu personalidad social?</h2>
+    <img src="imagen38.png" alt="imagen38" width="300" height="160" />
+    <button onclick="startQuiz(2)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>¿Qué animal representa tu instinto creativo?</h2>
+    <img src="imagen39.png" alt="imagen39" width="300" height="160" />
+    <button onclick="startQuiz(3)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>¿Eres más planta o animal según tu energía?</h2>
+    <img src="imagen40.png" alt="imagen40" width="300" height="160" />
+    <button onclick="startQuiz(4)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>¿Qué animal refleja tu manera de actuar en situaciones de estrés?</h2>
+    <img src="imagen41.png" alt="imagen41" width="300" height="160" />
+    <button onclick="startQuiz(5)">Comenzar Quiz</button>
+  </div>
+</div>
+
+
+<div id="quiz-box" style="display:none; margin-top:20px;"></div>
+
+<script>
+  const quizzes = [
+    {
+      title: "¿Qué planta refleja tu forma de pensar?", //-------1-------------------------------------------
+      questions: [
+        {
+          question: "¿Cómo tomas decisiones importantes?",
+          options: [
+            { text: "Con lógica", type: "cactus" },
+            { text: "Con intuición", type: "orquídea" },
+            { text: "Con calma", type: "lavanda" },
+            { text: "Con impulso", type: "girasol" }
+          ]
+        },
+        {
+          question: "¿Qué tipo de clima prefieres?",
+          options: [
+            { text: "Templado", type: "loto" },
+            { text: "Frío", type: "eucalipto" },
+            { text: "Tropical", type: "orquídea" },
+            { text: "Seco", type: "cactus" }
+          ]
+        },
+        {
+          question: "¿Qué color te inspira más?",
+          options: [
+            { text: "Verde", type: "bambú" },
+            { text: "Azul", type: "loto" },
+            { text: "Amarillo", type: "girasol" },
+            { text: "Rojo", type: "hibisco" }
+          ]
+        },
+        {
+          question: "¿Qué te describe mejor?",
+          options: [
+            { text: "Sereno/a", type: "lavanda" },
+            { text: "Analítico/a", type: "cactus" },
+            { text: "Apasionado/a", type: "hibisco" },
+            { text: "Práctico/a", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué haces al recibir una crítica?",
+          options: [
+            { text: "La reflexiono", type: "loto" },
+            { text: "La ignoro", type: "cactus" },
+            { text: "Me afecta", type: "lavanda" },
+            { text: "Actúo para mejorar", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué tipo de libros prefieres?",
+          options: [
+            { text: "Filosóficos", type: "loto" },
+            { text: "Románticos", type: "orquídea" },
+            { text: "De aventuras", type: "girasol" },
+            { text: "De ciencia", type: "cactus" }
+          ]
+        },
+        {
+          question: "¿Cómo describes tu proceso creativo?",
+          options: [
+            { text: "Organizado", type: "bambú" },
+            { text: "Espontáneo", type: "girasol" },
+            { text: "Inspirado", type: "orquídea" },
+            { text: "Metódico", type: "cactus" }
+          ]
+        },
+        {
+          question: "¿Cuál es tu mayor fortaleza mental?",
+          options: [
+            { text: "Paciencia", type: "lavanda" },
+            { text: "Memoria", type: "loto" },
+            { text: "Agilidad", type: "girasol" },
+            { text: "Razonamiento", type: "cactus" }
+          ]
+        },
+        {
+          question: "¿Te gusta estar solo o en grupo?",
+          options: [
+            { text: "Solo", type: "cactus" },
+            { text: "Grupo", type: "girasol" },
+            { text: "Depende", type: "loto" },
+            { text: "Ambos", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué te ayuda a concentrarte?",
+          options: [
+            { text: "Silencio", type: "lavanda" },
+            { text: "Música", type: "orquídea" },
+            { text: "Naturaleza", type: "bambú" },
+            { text: "Movimiento", type: "girasol" }
+          ]
+        },
+        {
+          question: "¿Cómo enfrentas los retos intelectuales?",
+          options: [
+            { text: "Con lógica", type: "cactus" },
+            { text: "Con pasión", type: "girasol" },
+            { text: "Con intuición", type: "orquídea" },
+            { text: "Con ayuda", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué te inspira más a pensar?",
+          options: [
+            { text: "Conversaciones", type: "girasol" },
+            { text: "Paisajes", type: "lavanda" },
+            { text: "Libros", type: "loto" },
+            { text: "Problemas complejos", type: "cactus" }
+          ]
+        },
+        {
+          question: "¿Cuál de estas flores prefieres?",
+          options: [
+            { text: "Girasol", type: "girasol" },
+            { text: "Loto", type: "loto" },
+            { text: "Lavanda", type: "lavanda" },
+            { text: "Cactus", type: "cactus" }
+          ]
+        },
+        {
+          question: "¿Con qué elemento te identificas?",
+          options: [
+            { text: "Aire", type: "orquídea" },
+            { text: "Agua", type: "loto" },
+            { text: "Fuego", type: "hibisco" },
+            { text: "Tierra", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Cómo describirías tu mente?",
+          options: [
+            { text: "Flexible", type: "bambú" },
+            { text: "Fuerte", type: "cactus" },
+            { text: "Creativa", type: "girasol" },
+            { text: "Analítica", type: "loto" }
+          ]
+        }
+      ]
+    },
+
+    {
+      title: "¿Qué planta representa tu forma de cuidar?",//---------------------------2---------------------
+      questions: [
+        {
+          question: "¿Qué haces cuando alguien necesita ayuda?",
+          options: [
+            { text: "Actúo de inmediato", type: "romero" },
+            { text: "Escucho primero", type: "lavanda" },
+            { text: "Busco soluciones", type: "eucalipto" },
+            { text: "Ofrezco compañía", type: "orquídea" }
+          ]
+        },
+        {
+          question: "¿Qué tipo de ayuda das más seguido?",
+          options: [
+            { text: "Material", type: "cactus" },
+            { text: "Emocional", type: "lavanda" },
+            { text: "Consejos", type: "eucalipto" },
+            { text: "Tiempo", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué animal simboliza tu forma de proteger?",
+          options: [
+            { text: "Perro", type: "romero" },
+            { text: "Águila", type: "cactus" },
+            { text: "Tortuga", type: "bambú" },
+            { text: "Elefante", type: "lavanda" }
+          ]
+        },
+        {
+          question: "¿Con qué frecuencia ayudas sin que te lo pidan?",
+          options: [
+            { text: "Siempre", type: "lavanda" },
+            { text: "Casi nunca", type: "eucalipto" },
+            { text: "Depende", type: "orquídea" },
+            { text: "A veces", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué importancia le das a la empatía?",
+          options: [
+            { text: "Mucha", type: "lavanda" },
+            { text: "Poca", type: "cactus" },
+            { text: "Regular", type: "romero" },
+            { text: "No sé", type: "orquídea" }
+          ]
+        },
+        {
+          question: "¿Cuál sería tu jardín ideal?",
+          options: [
+            { text: "Con muchas flores", type: "orquídea" },
+            { text: "De plantas curativas", type: "romero" },
+            { text: "Minimalista", type: "cactus" },
+            { text: "Silvestre", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Cómo cuidas tus pertenencias?",
+          options: [
+            { text: "Con delicadeza", type: "orquídea" },
+            { text: "Sin obsesión", type: "lavanda" },
+            { text: "Con mucha atención", type: "eucalipto" },
+            { text: "Con normalidad", type: "romero" }
+          ]
+        },
+        {
+          question: "¿Qué valoras más en una persona?",
+          options: [
+            { text: "Lealtad", type: "romero" },
+            { text: "Ternura", type: "lavanda" },
+            { text: "Fortaleza", type: "cactus" },
+            { text: "Sabiduría", type: "eucalipto" }
+          ]
+        },
+        {
+          question: "¿Cómo actúas en situaciones difíciles?",
+          options: [
+            { text: "Tranquilizo a otros", type: "lavanda" },
+            { text: "Pido ayuda", type: "orquídea" },
+            { text: "Analizo todo", type: "eucalipto" },
+            { text: "Actúo con calma", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué tipo de voluntariado harías?",
+          options: [
+            { text: "Con niños", type: "lavanda" },
+            { text: "Con animales", type: "romero" },
+            { text: "Ambiental", type: "bambú" },
+            { text: "Educativo", type: "eucalipto" }
+          ]
+        },
+        {
+          question: "¿Qué te inspira a cuidar más?",
+          options: [
+            { text: "Amor", type: "orquídea" },
+            { text: "Responsabilidad", type: "eucalipto" },
+            { text: "Ejemplo de otros", type: "romero" },
+            { text: "Conciencia social", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué planta representa protección?",
+          options: [
+            { text: "Romero", type: "romero" },
+            { text: "Cactus", type: "cactus" },
+            { text: "Lavanda", type: "lavanda" },
+            { text: "Eucalipto", type: "eucalipto" }
+          ]
+        },
+        {
+          question: "¿Qué significa cuidar para ti?",
+          options: [
+            { text: "Escuchar", type: "lavanda" },
+            { text: "Proteger", type: "romero" },
+            { text: "Observar", type: "bambú" },
+            { text: "Acompañar", type: "orquídea" }
+          ]
+        },
+        {
+          question: "¿Qué prefieres hacer un fin de semana?",
+          options: [
+            { text: "Jardinería", type: "romero" },
+            { text: "Leer", type: "eucalipto" },
+            { text: "Ayudar a otros", type: "lavanda" },
+            { text: "Descansar", type: "bambú" }
+          ]
+        },
+        {
+          question: "¿Qué palabra te identifica más?",
+          options: [
+            { text: "Compasión", type: "lavanda" },
+            { text: "Disciplina", type: "eucalipto" },
+            { text: "Fuerza", type: "cactus" },
+            { text: "Alegría", type: "orquídea" }
+          ]
+        }
+      ]
+    },
+    {
+    "title": "¿Qué animal representa tu personalidad social?",//-------------3-------------------------------
+    "questions": [
+      {
+        "question": "¿Cómo te comportas en reuniones sociales?",
+        "options": [
+          { "text": "Hablas mucho", "type": "delfin" },
+          { "text": "Observas primero", "type": "elefante" },
+          { "text": "Haces reír", "type": "mono" },
+          { "text": "Vas directo al punto", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Qué prefieres en un grupo?",
+        "options": [
+          { "text": "Liderar", "type": "lobo" },
+          { "text": "Acompañar", "type": "elefante" },
+          { "text": "Escuchar", "type": "elefante" },
+          { "text": "Dirigir desde las sombras", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Qué valoras más en una amistad?",
+        "options": [
+          { "text": "Lealtad", "type": "lobo" },
+          { "text": "Diversión", "type": "mono" },
+          { "text": "Apoyo", "type": "elefante" },
+          { "text": "Respeto", "type": "elefante" }
+        ]
+      },
+      {
+        "question": "¿Cómo reaccionas ante nuevas personas?",
+        "options": [
+          { "text": "Con curiosidad", "type": "delfin" },
+          { "text": "Con cautela", "type": "elefante" },
+          { "text": "Con entusiasmo", "type": "mono" },
+          { "text": "Con distancia", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Qué rol tomas en equipo?",
+        "options": [
+          { "text": "Líder", "type": "lobo" },
+          { "text": "Motivador", "type": "delfin" },
+          { "text": "Organizador", "type": "elefante" },
+          { "text": "Estratega", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Qué actividad prefieres en grupo?",
+        "options": [
+          { "text": "Juegos", "type": "mono" },
+          { "text": "Conversaciones", "type": "elefante" },
+          { "text": "Trabajo", "type": "hormiga" },
+          { "text": "Exploración", "type": "delfin" }
+        ]
+      },
+      {
+        "question": "¿Qué animal te gustaría ser en una comunidad?",
+        "options": [
+          { "text": "Delfín", "type": "delfin" },
+          { "text": "Lobo", "type": "lobo" },
+          { "text": "Elefante", "type": "elefante" },
+          { "text": "Hormiga", "type": "hormiga" }
+        ]
+      },
+      {
+        "question": "¿Cómo reaccionas ante el conflicto?",
+        "options": [
+          { "text": "Lo enfrentas", "type": "lobo" },
+          { "text": "Lo evitas", "type": "hormiga" },
+          { "text": "Lo entiendes", "type": "elefante" },
+          { "text": "Lo calmas", "type": "delfin" }
+        ]
+      },
+      {
+        "question": "¿Qué necesitas para sentirte parte de algo?",
+        "options": [
+          { "text": "Aceptación", "type": "elefante" },
+          { "text": "Libertad", "type": "delfin" },
+          { "text": "Afiliación", "type": "hormiga" },
+          { "text": "Objetivo común", "type": "hormiga" }
+        ]
+      },
+      {
+        "question": "¿Te gusta trabajar con otros?",
+        "options": [
+          { "text": "Sí, siempre", "type": "hormiga" },
+          { "text": "A veces", "type": "elefante" },
+          { "text": "Prefiero solo", "type": "lobo" },
+          { "text": "Depende", "type": "delfin" }
+        ]
+      },
+      {
+        "question": "¿Qué redes usas más?",
+        "options": [
+          { "text": "WhatsApp", "type": "elefante" },
+          { "text": "Instagram", "type": "mono" },
+          { "text": "TikTok", "type": "delfin" },
+          { "text": "Ninguna", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Cómo te expresas?",
+        "options": [
+          { "text": "Con palabras", "type": "delfin" },
+          { "text": "Con gestos", "type": "mono" },
+          { "text": "Con acciones", "type": "hormiga" },
+          { "text": "Con miradas", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Qué animal representa la alegría social?",
+        "options": [
+          { "text": "Perico", "type": "delfin" },
+          { "text": "Perro", "type": "elefante" },
+          { "text": "Mono", "type": "mono" },
+          { "text": "Llama", "type": "delfin" }
+        ]
+      },
+      {
+        "question": "¿Qué te molesta en grupo?",
+        "options": [
+          { "text": "Falta de respeto", "type": "elefante" },
+          { "text": "Silencio", "type": "delfin" },
+          { "text": "Desorganización", "type": "hormiga" },
+          { "text": "Egos", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Qué lugar social prefieres?",
+        "options": [
+          { "text": "Fiestas", "type": "delfin" },
+          { "text": "Reuniones tranquilas", "type": "elefante" },
+          { "text": "Actividades deportivas", "type": "lobo" },
+          { "text": "Voluntariado", "type": "hormiga" }
+        ]
+      }
+    ]
+  },
+
+{
+  "title": "¿Qué especie líder del ambiente eres?",//-----------------------4-----------------------------
+  "questions": [
+    {
+      "question": "¿Cómo tomas decisiones en grupo?",
+      "options": [
+        { "text": "Consulto a todos", "type": "delfín" },
+        { "text": "Decido rápido", "type": "guepardo" },
+        { "text": "Busco consenso", "type": "abeja" },
+        { "text": "Dejo que otros decidan", "type": "perezoso" }
+      ]
+    },
+    {
+      "question": "¿Qué valoras en un equipo?",
+      "options": [
+        { "text": "Diversidad", "type": "delfín" },
+        { "text": "Disciplina", "type": "hormiga" },
+        { "text": "Creatividad", "type": "loro" },
+        { "text": "Compromiso", "type": "abeja" }
+      ]
+    },
+    {
+      "question": "¿Cómo motivas a los demás?",
+      "options": [
+        { "text": "Con palabras", "type": "delfín" },
+        { "text": "Con acciones", "type": "guepardo" },
+        { "text": "Con recompensas", "type": "águila" },
+        { "text": "Con ejemplo", "type": "abeja" }
+      ]
+    },
+    {
+      "question": "¿Qué haces ante un problema?",
+      "options": [
+        { "text": "Analizo", "type": "búho" },
+        { "text": "Actúo rápido", "type": "guepardo" },
+        { "text": "Busco ayuda", "type": "delfín" },
+        { "text": "Evito el conflicto", "type": "perezoso" }
+      ]
+    },
+    {
+      "question": "¿Prefieres ser líder o seguidor?",
+      "options": [
+        { "text": "Líder", "type": "águila" },
+        { "text": "Seguidor", "type": "perezoso" },
+        { "text": "Depende", "type": "abeja" },
+        { "text": "Ninguno", "type": "cactus" }
+      ]
+    },
+    {
+      "question": "¿Cómo manejas el estrés?",
+      "options": [
+        { "text": "Respirando", "type": "delfín" },
+        { "text": "Delegando", "type": "búho" },
+        { "text": "Ejercitando", "type": "guepardo" },
+        { "text": "Meditando", "type": "bambú" }
+      ]
+    },
+    {
+      "question": "¿Qué haces cuando alguien falla?",
+      "options": [
+        { "text": "Lo apoyo", "type": "delfín" },
+        { "text": "Lo reprendo", "type": "tigre" },
+        { "text": "Lo ignoro", "type": "perezoso" },
+        { "text": "Busco solución", "type": "búho" }
+      ]
+    },
+    {
+      "question": "¿Cómo defines éxito?",
+      "options": [
+        { "text": "Logros", "type": "guepardo" },
+        { "text": "Reconocimiento", "type": "águila" },
+        { "text": "Trabajo en equipo", "type": "abeja" },
+        { "text": "Crecimiento", "type": "delfín" }
+      ]
+    },
+    {
+      "question": "¿Qué te inspira a liderar?",
+      "options": [
+        { "text": "Responsabilidad", "type": "delfín" },
+        { "text": "Poder", "type": "tigre" },
+        { "text": "Servicio", "type": "abeja" },
+        { "text": "Reconocimiento", "type": "águila" }
+      ]
+    },
+    {
+      "question": "¿Qué cualidad consideras clave en un líder?",
+      "options": [
+        { "text": "Empatía", "type": "delfín" },
+        { "text": "Firmeza", "type": "tigre" },
+        { "text": "Carisma", "type": "águila" },
+        { "text": "Sabiduría", "type": "búho" }
+      ]
+    },
+    {
+      "question": "¿Qué haces para resolver conflictos?",
+      "options": [
+        { "text": "Escucho", "type": "delfín" },
+        { "text": "Impongo", "type": "tigre" },
+        { "text": "Evito", "type": "perezoso" },
+        { "text": "Mediación", "type": "abeja" }
+      ]
+    },
+    {
+      "question": "¿Qué prefieres planificar?",
+      "options": [
+        { "text": "Todo", "type": "búho" },
+        { "text": "Solo lo básico", "type": "guepardo" },
+        { "text": "Improvisar", "type": "águila" },
+        { "text": "Dejar que otros planifiquen", "type": "perezoso" }
+      ]
+    },
+    {
+      "question": "¿Cómo celebras los éxitos?",
+      "options": [
+        { "text": "Con el equipo", "type": "abeja" },
+        { "text": "Solo", "type": "águila" },
+        { "text": "Con recompensas", "type": "búho" },
+        { "text": "Con reconocimiento", "type": "águila" }
+      ]
+    },
+    {
+      "question": "¿Qué haces si un plan falla?",
+      "options": [
+        { "text": "Revisar y corregir", "type": "búho" },
+        { "text": "Desistir", "type": "perezoso" },
+        { "text": "Cambiar de plan", "type": "águila" },
+        { "text": "Ignorar", "type": "koala" }
+      ]
+    },
+    {
+      "question": "¿Qué te hace sentir un buen líder?",
+      "options": [
+        { "text": "Confianza del equipo", "type": "delfín" },
+        { "text": "Poder", "type": "tigre" },
+        { "text": "Logros personales", "type": "águila" },
+        { "text": "Ayuda a otros", "type": "abeja" }
+      ]
+    }
+  ]
+},
+
+{
+  "title": "¿Qué planta o animal eres segun tu forma de aprender?", //---------------5----------------------------------
+  "questions": [
+    {
+      "question": "¿Cómo aprendes mejor?",
+      "options": [
+        { "text": "Escuchando", "type": "búho" },
+        { "text": "Leyendo", "type": "girasol" },
+        { "text": "Haciendo", "type": "tortuga" },
+        { "text": "Observando", "type": "mariposa" }
+      ]
+    },
+    {
+      "question": "¿Prefieres estudiar solo o en grupo?",
+      "options": [
+        { "text": "Solo", "type": "girasol" },
+        { "text": "En grupo", "type": "búho" },
+        { "text": "Depende", "type": "mariposa" },
+        { "text": "No estudio", "type": "tortuga" }
+      ]
+    },
+    {
+      "question": "¿Qué te motiva a aprender?",
+      "options": [
+        { "text": "Curiosidad", "type": "girasol" },
+        { "text": "Recompensas", "type": "tortuga" },
+        { "text": "Presión", "type": "mariposa" },
+        { "text": "Competencia", "type": "búho" }
+      ]
+    },
+    {
+      "question": "¿Cómo recuerdas mejor la información?",
+      "options": [
+        { "text": "Escribiendo", "type": "girasol" },
+        { "text": "Repetiendo", "type": "búho" },
+        { "text": "Asociando", "type": "tortuga" },
+        { "text": "Visualizando", "type": "mariposa" }
+      ]
+    },
+    {
+      "question": "¿Qué haces si no entiendes algo?",
+      "options": [
+        { "text": "Pregunto", "type": "búho" },
+        { "text": "Investigo", "type": "girasol" },
+        { "text": "Ignoro", "type": "tortuga" },
+        { "text": "Repito", "type": "mariposa" }
+      ]
+    },
+    {
+      "question": "¿Cuál es tu materia favorita?",
+      "options": [
+        { "text": "Matemáticas", "type": "mariposa" },
+        { "text": "Arte", "type": "tortuga" },
+        { "text": "Ciencias", "type": "girasol" },
+        { "text": "Lenguaje", "type": "búho" }
+      ]
+    },
+    {
+      "question": "¿Qué prefieres para estudiar?",
+      "options": [
+        { "text": "Videos", "type": "mariposa" },
+        { "text": "Libros", "type": "girasol" },
+        { "text": "Practicar", "type": "tortuga" },
+        { "text": "Escuchar", "type": "búho" }
+      ]
+    },
+    {
+      "question": "¿Cómo tomas notas?",
+      "options": [
+        { "text": "Escribo mucho", "type": "girasol" },
+        { "text": "Solo lo importante", "type": "búho" },
+        { "text": "Hago esquemas", "type": "mariposa" },
+        { "text": "No tomo notas", "type": "tortuga" }
+      ]
+    },
+    {
+      "question": "¿Qué te ayuda a concentrarte?",
+      "options": [
+        { "text": "Música", "type": "búho" },
+        { "text": "Silencio", "type": "girasol" },
+        { "text": "Movimiento", "type": "tortuga" },
+        { "text": "Comida", "type": "mariposa" }
+      ]
+    },
+    {
+      "question": "¿Qué haces antes de un examen?",
+      "options": [
+        { "text": "Repaso", "type": "girasol" },
+        { "text": "Estudio nuevo", "type": "tortuga" },
+        { "text": "Descanso", "type": "búho" },
+        { "text": "Me estreso", "type": "mariposa" }
+      ]
+    },
+    {
+      "question": "¿Cómo te sientes aprendiendo algo nuevo?",
+      "options": [
+        { "text": "Entusiasmado", "type": "tortuga" },
+        { "text": "Nervioso", "type": "mariposa" },
+        { "text": "Aburrido", "type": "girasol" },
+        { "text": "Confundido", "type": "búho" }
+      ]
+    },
+    {
+      "question": "¿Qué haces después de aprender algo?",
+      "options": [
+        { "text": "Practico", "type": "tortuga" },
+        { "text": "Olvido", "type": "mariposa" },
+        { "text": "Comparto", "type": "búho" },
+        { "text": "Anoto", "type": "girasol" }
+      ]
+    },
+    {
+      "question": "¿Qué prefieres para aprender idiomas?",
+      "options": [
+        { "text": "Conversar", "type": "búho" },
+        { "text": "Leer", "type": "girasol" },
+        { "text": "Escuchar", "type": "mariposa" },
+        { "text": "Escribir", "type": "tortuga" }
+      ]
+    },
+    {
+      "question": "¿Cómo sueles organizar tu tiempo?",
+      "options": [
+        { "text": "Planifico", "type": "girasol" },
+        { "text": "Improviso", "type": "tortuga" },
+        { "text": "Dejo para último", "type": "mariposa" },
+        { "text": "No organizo", "type": "búho" }
+      ]
+    },
+    {
+      "question": "¿Qué tipo de ejercicios prefieres?",
+      "options": [
+        { "text": "Prácticos", "type": "tortuga" },
+        { "text": "Teóricos", "type": "girasol" },
+        { "text": "De memoria", "type": "búho" },
+        { "text": "Visuales", "type": "mariposa" }
+      ]
+    }
+  ]
+},
+
+
+    {
+    "title": "¿Qué animal refleja tu manera de actuar en situaciones de estrés?",//------------------6--------
+    "questions": [
+      {
+        "question": "¿Cómo reaccionas cuando estás estresado?",
+        "options": [
+          { "text": "Me calmo", "type": "búho" },
+          { "text": "Me altero", "type": "león" },
+          { "text": "Busco ayuda", "type": "lobo" },
+          { "text": "Me aíslo", "type": "tortuga" }
+        ]
+      },
+      {
+        "question": "¿Qué haces para relajarte?",
+        "options": [
+          { "text": "Respiro profundo", "type": "búho" },
+          { "text": "Hago ejercicio", "type": "león" },
+          { "text": "Escucho música", "type": "lobo" },
+          { "text": "Medito", "type": "tortuga" }
+        ]
+      },
+      {
+        "question": "¿Cómo manejas la presión?",
+        "options": [
+          { "text": "Con paciencia", "type": "búho" },
+          { "text": "Con ansiedad", "type": "conejo" },
+          { "text": "Con distracción", "type": "zorro" },
+          { "text": "Con confrontación", "type": "león" }
+        ]
+      },
+      {
+        "question": "¿Qué animal te identifica en estrés?",
+        "options": [
+          { "text": "Tortuga", "type": "tortuga" },
+          { "text": "León", "type": "león" },
+          { "text": "Conejo", "type": "conejo" },
+          { "text": "Búho", "type": "búho" }
+        ]
+      },
+      {
+        "question": "¿Qué haces cuando todo parece difícil?",
+        "options": [
+          { "text": "Persisto", "type": "león" },
+          { "text": "Rindo", "type": "ratón" },
+          { "text": "Busco soluciones", "type": "búho" },
+          { "text": "Me alejo", "type": "tortuga" }
+        ]
+      },
+      {
+        "question": "¿Cómo expresas tu estrés?",
+        "options": [
+          { "text": "Con palabras", "type": "lobo" },
+          { "text": "Con acciones", "type": "león" },
+          { "text": "Con silencio", "type": "tortuga" },
+          { "text": "Con nerviosismo", "type": "conejo" }
+        ]
+      },
+      {
+        "question": "¿Qué prefieres hacer en momentos tensos?",
+        "options": [
+          { "text": "Hablar", "type": "lobo" },
+          { "text": "Callar", "type": "ratón" },
+          { "text": "Salir a caminar", "type": "búho" },
+          { "text": "Dormir", "type": "tortuga" }
+        ]
+      },
+      {
+        "question": "¿Qué te ayuda a sentir seguridad?",
+        "options": [
+          { "text": "Rutina", "type": "tortuga" },
+          { "text": "Apoyo", "type": "lobo" },
+          { "text": "Meditación", "type": "búho" },
+          { "text": "Ejercicio", "type": "león" }
+        ]
+      },
+      {
+        "question": "¿Qué haces para evitar el estrés?",
+        "options": [
+          { "text": "Organizo", "type": "búho" },
+          { "text": "Delego", "type": "lobo" },
+          { "text": "Ignoro", "type": "zorro" },
+          { "text": "Trabajo más", "type": "león" }
+        ]
+      },
+      {
+        "question": "¿Cómo te sientes después de un momento estresante?",
+        "options": [
+          { "text": "Aliviado", "type": "búho" },
+          { "text": "Agotado", "type": "ratón" },
+          { "text": "Triste", "type": "conejo" },
+          { "text": "Indiferente", "type": "zorro" }
+        ]
+      },
+      {
+        "question": "¿Qué te da fuerza en crisis?",
+        "options": [
+          { "text": "Familia", "type": "lobo" },
+          { "text": "Amigos", "type": "conejo" },
+          { "text": "Fe", "type": "búho" },
+          { "text": "Trabajo", "type": "león" }
+        ]
+      },
+      {
+        "question": "¿Cómo enfrentas los problemas?",
+        "options": [
+          { "text": "Con calma", "type": "búho" },
+          { "text": "Con miedo", "type": "ratón" },
+          { "text": "Con valor", "type": "león" },
+          { "text": "Con duda", "type": "conejo" }
+        ]
+      },
+      {
+        "question": "¿Qué haces cuando te sientes abrumado?",
+        "options": [
+          { "text": "Respiro", "type": "búho" },
+          { "text": "Lloro", "type": "ratón" },
+          { "text": "Salgo", "type": "lobo" },
+          { "text": "Pienso", "type": "zorro" }
+        ]
+      },
+      {
+        "question": "¿Qué animal te representa cuando tienes miedo?",
+        "options": [
+          { "text": "Ratón", "type": "ratón" },
+          { "text": "Tigre", "type": "león" },
+          { "text": "Zorro", "type": "zorro" },
+          { "text": "Lobo", "type": "lobo" }
+        ]
+      },
+      {
+        "question": "¿Qué te ayuda a recuperar la calma?",
+        "options": [
+          { "text": "Música", "type": "lobo" },
+          { "text": "Ejercicio", "type": "león" },
+          { "text": "Meditación", "type": "búho" },
+          { "text": "Conversar", "type": "conejo" }
+        ]
+      }
+    ]
+  }
+];
+ 
+
+    let currentQuizIndex = 0;
+    let currentQuestionIndex = 0;
+    let answeredQuestions = [];
+    let personalityScores = {};
+
+    const quizBox = document.getElementById('quiz-box');
+
+    function startQuiz(index) {
+      currentQuizIndex = index;
+      currentQuestionIndex = 0;
+      answeredQuestions = [];
+      personalityScores = {};
+      quizBox.style.display = 'block';
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+      const quiz = quizzes[currentQuizIndex];
+      const q = quiz.questions[currentQuestionIndex];
+      const answered = answeredQuestions[currentQuestionIndex];
+
+      quizBox.innerHTML = `
+        <h2>${quiz.title} (Pregunta ${currentQuestionIndex + 1} de ${quiz.questions.length})</h2>
+        <p>${q.question}</p>
+
+        <div class="options-container">
+          ${q.options.map((opt, i) => `
+            <button 
+              onclick="answer(${i})" 
+              ${answered !== undefined ? 'disabled' : ''} 
+              class="${answered === i ? 'selected' : ''}"
+            >${opt.text}</button>
+          `).join('')}
+        </div>
+
+        <div class="nav-buttons" style="margin-top:10px;">
+          <button onclick="prevQuestion()" ${currentQuestionIndex === 0 ? 'disabled' : ''}>← Anterior</button>
+          <button onclick="nextQuestion()" ${currentQuestionIndex === quiz.questions.length - 1 ? 'disabled' : ''}>Siguiente →</button>
+        </div>
+
+        <p style="text-align:center;">Preguntas respondidas: ${answeredQuestions.filter(a => a !== undefined).length} / ${quiz.questions.length}</p>
+
+        ${currentQuestionIndex === quiz.questions.length - 1 ? `
+          <div style="text-align:center; margin-top: 10px;">
+            <button onclick="finishQuiz()">Terminar Quiz</button>
+          </div>` : ''}
+      `;
+    }
+
+    function answer(selected) {
+      const quiz = quizzes[currentQuizIndex];
+      const q = quiz.questions[currentQuestionIndex];
+      const selectedOption = q.options[selected];
+
+      if (answeredQuestions[currentQuestionIndex] !== undefined) return;
+
+      answeredQuestions[currentQuestionIndex] = selected;
+
+      if (!personalityScores[selectedOption.type]) {
+        personalityScores[selectedOption.type] = 0;
+      }
+      personalityScores[selectedOption.type]++;
+
+      renderQuestion();
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < quizzes[currentQuizIndex].questions.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+      }
+    }
+
+    function finishQuiz() {
+    let highestType = null;
+    let maxScore = 0;
+
+    for (const type in personalityScores) {
+      if (personalityScores[type] > maxScore) {
+        highestType = type;
+        maxScore = personalityScores[type];
+      }
+    }
+
+    const results = {
+      girasol: "¡Eres un Girasol! 🌻 Creativo, alegre y lleno de luz.",
+      helecho: "¡Eres un Helecho! 🍃 Sereno, observador y adaptable.",
+      cactus: "¡Eres un Cactus! 🌵 Fuerte, independiente y resistente.",
+      orquidea: "¡Eres una Orquídea! 🌸 Elegante, sensible y única.",
+      búho: "¡Eres un Búho! 🦉 Sabio, analítico y observador.",
+      lobo: "¡Eres un Lobo! 🐺 Fuerte, leal y protector.",
+      zorro: "¡Eres un Zorro! 🦊 Astuto, ingenioso y adaptable.",
+      león: "¡Eres un León! 🦁 Valiente, líder y decidido.",
+      ratón: "¡Eres un Ratón! 🐭 Precavido, discreto y detallista.",
+      conejo: "¡Eres un Conejo! 🐰 Amable, sensible y rápido.",
+      tortuga: "¡Eres una mariposa! 🦋 extrovertida, sociable y encantadora.",
+      mariposa: "¡Eres una tortuga! 🐢 paciente, tranquila y amigable."
+    };
+
+    quizBox.innerHTML = `
+      <h2>Resultado del Test</h2>
+      <p><strong>${results[highestType] || 'Resultado desconocido'}</strong></p>
+      <div style="text-align:center;">
+        <button onclick="quizBox.style.display='none'">Cerrar</button>
+      </div>
+    `;
+  }
+
+      
+  </script>
+</body>
+</html>

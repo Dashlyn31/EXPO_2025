@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #f8f5eb 50%, #2eb7f7 100%);
+      overflow-x: hidden;
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+    header {
+      background: #1e664e;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      font-family: "Marko One", sans-serif;
+    }
+    .fact {
+      margin: 20px;
+      padding: 20px;
+      background: #C9A063;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, background 0.5s;
+      cursor: pointer;
+    }
+    .fact:hover {
+      transform: scale(1.05);
+      background: #e6c824;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .animated {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+    .animated.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fact img {
+    width: 100%;           /* Que ocupe todo el ancho del contenedor */
+    height: 180px;         /* Alto fijo para todas */
+    object-fit: cover;     /* Recorta sin deformar la imagen */
+    border-radius: 10px;   /* Bordes redondeados */
+    margin-bottom: 10px;   /* Espacio debajo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra opcional para más estilo */
+    }
+.frase-inspiradora {
+    background-color: #2eb7f7; /* Celeste claro */
+    text-align: center;
+    font-size: 1.5em;
+    color: #fdfdfd;
+    margin-top: 0;
+    padding: 15px 20px;
+    animation: fadeIn 1s ease-in-out;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    border-radius: 0; /* Sin bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 45px;
+  background-color: #808000;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s, opacity 0.3s;
+  z-index: 2000;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-button.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+  </style>
+</head>
+<body>
+<a href="http://localhost/EXPO_2025/Pagina_principal2025/principal/pagina_principal.html#interactive-section" class="back-button">
+Volver
+</a>
+<script>
+  const backButton = document.querySelector('.back-button');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      backButton.classList.add('hidden');
+    } else {
+      backButton.classList.remove('hidden');
+    }
+  });
+</script>
+  <header>
+   <i class="fas fa-globe-americas"></i>  Curiosidades Ambientales de Panamá y el Mundo <i class="fas fa-globe-americas"></i>
+  </header>
+  <section class="frase-inspiradora">
+  <p id="frase"><i class="fas fa-leaf"></i> Cuidar el planeta es cuidarnos a nosotros mismos.</p>
+</section>
+  <main class="container" id="factsContainer">
+    <!-- Los datos se insertarán aquí dinámicamente -->
+  </main>
+
+
+  <script>
+    const facts = [
+      "Panamá es uno de los países más biodiversos del mundo por kilómetro cuadrado.",
+      "El Parque Nacional Darién es el área protegida más grande de Centroamérica.",
+      "Las ballenas jorobadas migran cada año a las costas de Panamá.",
+      "Más del 50% de Panamá está cubierto por bosques.",
+      "La energía hidroeléctrica es una fuente principal en Panamá.",
+      "Panamá tiene más de 1,500 islas.",
+      "El Canal de Panamá es un importante centro logístico mundial.",
+      "Panamá cuenta con más de 14 parques nacionales.",
+      "El manglar de la Bahía de Panamá es vital para la vida marina.",
+      "Panamá está en el llamado 'hotspot' de biodiversidad mesoamericano.",
+      "Los océanos producen el 70% del oxígeno que respiramos.",
+      "Cada año se pierden más de 10 millones de hectáreas de bosques en el mundo.",
+      "La temperatura del planeta ha aumentado aproximadamente 1.1 °C desde la era preindustrial.",
+      "El reciclaje de una lata de aluminio ahorra la energía suficiente para hacer funcionar una TV durante 3 horas.",
+      "Una sola bolsa de plástico puede tardar hasta 500 años en descomponerse.",
+      "El deshielo del Ártico afecta el nivel del mar en todo el mundo.",
+      "Cada minuto, se compra 1 millón de botellas de plástico en el mundo.",
+      "El bambú puede crecer hasta 91 cm por día.",
+      "Las tortugas marinas pueden vivir más de 100 años.",
+      "Los árboles se comunican entre sí a través de redes de hongos en el suelo.",
+      "La energía solar es una de las fuentes de energía de más rápido crecimiento.",
+      "La contaminación del aire causa 7 millones de muertes al año.",
+      "El colibrí aletea hasta 80 veces por segundo.",
+      "Más del 90% de los residuos marinos son plásticos.",
+      "La Tierra pierde especies a un ritmo 1,000 veces mayor que el natural.",
+      "Los arrecifes de coral albergan a más del 25% de toda la vida marina.",
+      "Un solo árbol puede absorber hasta 22 kg de CO₂ por año.",
+      "El uso de bicicletas puede reducir la huella de carbono significativamente.",
+      "Las zonas muertas marinas están aumentando debido al uso de fertilizantes.",
+      "Los bosques tropicales actúan como los pulmones del planeta.",
+      "La rana dorada panameña es un símbolo nacional en peligro crítico de extinción.",
+      "En el Archipiélago de Las Perlas, se han avistado especies marinas únicas en el mundo."
+    ];
+
+    const images = [
+      "a.jpg",
+      "b.jpg",
+      "c.png",
+      "d.jpg",
+      "e.jpg",
+      "f.jpg",
+      "g.jpg",
+      "h.jpg",
+      "i.jpg",
+      "j.jpg",
+      "k.webp",
+      "l.jpg",
+      "m.jpg",
+      "n.jpg",
+      "ñ.jpg",
+      "o.jfif",
+      "p.jpg",
+      "q.jfif",
+      "r.webp",
+      "s.jpg",
+      "t.jfif",
+      "u.jfif",
+      "v.jfif",
+      "w.webp",
+      "x.webp",
+      "y.jfif",
+      "z.jpg",
+      "A.avif",
+      "B.jfif",
+      "C.jpg",
+      "D.jfif",
+      "E.webp"
+    ];
+
+
+    const container = document.getElementById('factsContainer');
+
+    facts.forEach((fact, index) => {
+      const div = document.createElement('div');
+      div.className = 'fact animated';
+      div.innerHTML = `
+  <img src="${images[index]}" alt="Imagen relacionada" style="width:100%; border-radius:10px; margin-bottom:10px; max-height:200px; object-fit:cover;">
+  <p>${index + 1}. ${fact}</p>
+`;
+
+      container.appendChild(div);
+    });
+
+    // Mostrar animaciones al hacer scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    document.querySelectorAll('.animated').forEach(el => {
+      observer.observe(el);
+    });
+
+    //frases de arriba
+const frases = [
+  '<i class="fas fa-leaf"></i> "Cuidar el planeta es cuidarnos a nosotros mismos."',
+  '<i class="fas fa-globe-americas"></i> "No heredamos la Tierra de nuestros padres, la tomamos prestada de nuestros hijos."',
+  '<i class="fas fa-seedling"></i> "Pequeñas acciones hacen grandes diferencias."',
+  '<i class="fas fa-solar-panel"></i> "El futuro es verde si actuamos hoy."',
+  '<i class="fas fa-tint"></i> "Cada gota cuenta, cada árbol importa."',
+  '<i class="fas fa-recycle"></i> "La Tierra no necesita que la salvemos, sino que dejemos de dañarla."',
+  '<i class="fas fa-hands-helping"></i> "Pequeñas acciones, grandes cambios."',
+  '<i class="fas fa-bolt"></i> "El planeta no necesita más héroes, necesita más conciencia."',
+  '<i class="fas fa-tree"></i> "Cuidar el ambiente es cuidar la vida."'
+];
+
+
+let fraseIndex = 0;
+const fraseElemento = document.getElementById('frase');
+
+setInterval(() => {
+  fraseIndex = (fraseIndex + 1) % frases.length;
+  fraseElemento.innerHTML = frases[fraseIndex];
+}, 4000); // Cambia cada 4 segundos
+
+  </script>
+</body>
+</html>

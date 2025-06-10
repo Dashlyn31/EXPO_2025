@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\zona_quizz\css_zona_quizz 1.css" rel="stylesheet" />
+<title>Quizzes Ambientales</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link href="css_zona_quizz.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<a href="http://localhost/EXPO_2025/Pagina_principal2025/principal/pagina_principal.html#interactive-section" class="back-button">
+<i class="fas fa-arrow-left"></i>Volver
+</a>
+<script>
+  const backButton = document.querySelector('.back-button');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      backButton.classList.add('hidden');
+    } else {
+      backButton.classList.remove('hidden');
+    }
+  });
+</script>
+
+</head>
+<body>
+
+<div class="titulo"><h1><center>Quizzes Ambientales</center></h1></div>
+<div id="quizzes">
+  <div class="quiz-card">
+    <h2>Reciclaje</h2>
+    <img src="imagen30.jpg" alt="Reciclaje" width="300" height="160" />
+    <button onclick="startQuiz(0)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>Contaminación</h2>
+    <img src="imagen31.jpg" alt="Contaminación" width="300" height="160" />
+    <button onclick="startQuiz(1)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>Energías Renovables</h2>
+    <img src="imagen32.jpg" alt="Energías Renovables" width="300" height="160" />
+    <button onclick="startQuiz(2)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>Cambio Climático</h2>
+    <img src="imagen33.jpg" alt="Cambio Climático" width="300" height="160" />
+    <button onclick="startQuiz(3)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>Biodiversidad</h2>
+    <img src="imagen34.jpg" alt="Biodiversidad" width="300" height="160" />
+    <button onclick="startQuiz(4)">Comenzar Quiz</button>
+  </div>
+  <div class="quiz-card">
+    <h2>Consumo Responsable</h2>
+    <img src="imagen35.jpg" alt="Consumo Responsable" width="300" height="160" />
+    <button onclick="startQuiz(5)">Comenzar Quiz</button>
+  </div>
+</div>
+
+
+<div id="quiz-box" style="display:none; margin-top:20px;"></div>
+
+<script>
+  const quizzes = [
+    { // Reciclaje
+      title: "Reciclaje",
+      questions: [
+        { question: "¿Qué color de contenedor se usa para vidrio?", options: ["Amarillo", "Verde", "Azul", "Rojo"], correct: 1 },
+        { question: "¿Cuál de estos productos se puede reciclar?", options: ["Cáscara de plátano", "Cartón", "Papel sucio", "Chicle"], correct: 1 },
+        { question: "¿Qué NO debes poner en el contenedor azul?", options: ["Revistas", "Botellas de plástico", "Cuadernos", "Cartón"], correct: 1 },
+        { question: "¿Qué tipo de residuos van en el contenedor amarillo?", options: ["Vidrio", "Papel", "Envases de plástico y latas", "Orgánicos"], correct: 2 },
+        { question: "¿Cuál de estos objetos es reciclable?", options: ["Servilleta usada", "Lata de refresco", "Colilla de cigarro", "Chicle"], correct: 1 },
+        { question: "¿Qué color de contenedor se usa para residuos orgánicos?", options: ["Marrón", "Verde", "Gris", "Rojo"], correct: 0 },
+        { question: "¿Qué se debe hacer antes de reciclar una botella plástica?", options: ["Tirarla entera", "Quemarla", "Aplastarla y quitarle la tapa", "Rellenarla con tierra"], correct: 2 },
+        { question: "¿Dónde se deben tirar las pilas usadas?", options: ["Contenedor gris", "Contenedor azul", "Punto limpio o especial", "En la basura común"], correct: 2 },
+        { question: "¿Cuál es el objetivo del reciclaje?", options: ["Ganar dinero", "Reducir la contaminación y reutilizar recursos", "Hacer más basura", "Eliminar el uso de papel"], correct: 1 },
+        { question: "¿Qué contenedor se usa para el vidrio?", options: ["Azul", "Verde", "Amarillo", "Rojo"], correct: 1 },
+        { question: "¿Qué tipo de papel NO se debe reciclar?", options: ["Papel blanco", "Papel de regalo limpio", "Papel mojado o sucio", "Cartón ondulado"], correct: 2 },
+        { question: "¿Qué significa el símbolo de reciclaje (tres flechas formando un triángulo)?", options: ["Basura", "Contaminación", "Reutilización de materiales", "Residuos peligrosos"], correct: 2 },
+        { question: "¿Cuál de los siguientes materiales tarda más en descomponerse?", options: ["Cáscara de banana", "Lata de aluminio", "Papel", "Cartón"], correct: 1 },
+        { question: "¿Qué se puede hacer con botellas plásticas recicladas?", options: ["Nada", "Ropa, mochilas o nuevos envases", "Solo basura", "Comida"], correct: 1 },
+        { question: "¿Cuál es un beneficio directo del reciclaje?", options: ["Más plástico en el mar", "Menos consumo de energía y recursos naturales", "Aumento de residuos", "Mayor uso del agua"], correct: 1 }
+      ]
+    },
+    { // Contaminación
+      title: "Contaminación",
+      questions: [
+        { question: "¿Cuál es la principal causa de la contaminación del aire?", options: ["Vehículos", "Plantas", "Animales", "Agua"], correct: 0 },
+        { question: "¿Qué tipo de contaminación afecta a los ríos y lagos?", options: ["Contaminación del aire", "Contaminación acústica", "Contaminación del agua", "Contaminación lumínica"], correct: 2 },
+        { question: "¿Cuál es un efecto negativo de la contaminación sonora?", options: ["Mejora la salud", "Provoca estrés y pérdida auditiva", "Aumenta la fertilidad", "Purifica el aire"], correct: 1 },
+        { question: "¿Qué gases contribuyen al efecto invernadero?", options: ["Oxígeno y nitrógeno", "Dióxido de carbono y metano", "Helio y argón", "Ozono y hidrógeno"], correct: 1 },
+        { question: "¿Qué puedes hacer para reducir la contaminación del aire?", options: ["Usar transporte público", "Quemar basura", "Usar mucho plástico", "Dejar luces encendidas"], correct: 0 },
+        { question: "¿Qué es la contaminación lumínica?", options: ["Exceso de luz artificial", "Ruido excesivo", "Basura en el mar", "Agua contaminada"], correct: 0 },
+        { question: "¿Qué producto puede contaminar el suelo?", options: ["Papel reciclado", "Aceite usado", "Botellas plásticas limpias", "Cartón"], correct: 1 },
+        { question: "¿Qué organismo ayuda a limpiar los ecosistemas contaminados?", options: ["Bacterias", "Hormigas", "Árboles", "Aves"], correct: 0 },
+        { question: "¿Qué es la contaminación cruzada?", options: ["Mezcla de residuos peligrosos con otros", "Separar basura correctamente", "Plantar árboles", "Usar energía renovable"], correct: 0 },
+        { question: "¿Cuál es un contaminante común en las industrias?", options: ["Agua limpia", "Plomo", "Oxígeno", "Arena"], correct: 1 },
+        { question: "¿Qué afecta la calidad del aire?", options: ["Fumar en lugares cerrados", "Plantar flores", "Reciclar papel", "Usar bicicletas"], correct: 0 },
+        { question: "¿Qué es smog?", options: ["Niebla con contaminación", "Tipo de planta", "Agua limpia", "Energía solar"], correct: 0 },
+        { question: "¿Cómo afecta la contaminación a la salud humana?", options: ["No tiene efecto", "Provoca enfermedades respiratorias", "Mejora la vista", "Fortalece huesos"], correct: 1 },
+        { question: "¿Qué es un contaminante biológico?", options: ["Virus y bacterias", "Plantas", "Rocas", "Agua pura"], correct: 0 },
+        { question: "¿Qué acciones pueden disminuir la contaminación?", options: ["Usar menos plástico y reciclar", "Quemar basura", "Tirar residuos en el suelo", "Ignorar el problema"], correct: 0 }
+      ]
+    },
+    { // Energías Renovables
+      title: "Energías Renovables",
+      questions: [
+        { question: "¿Cuál es una fuente de energía renovable?", options: ["Carbón", "Petróleo", "Energía solar", "Gas natural"], correct: 2 },
+        { question: "¿Qué energía se obtiene del viento?", options: ["Energía solar", "Energía eólica", "Energía nuclear", "Energía térmica"], correct: 1 },
+        { question: "¿Qué dispositivo convierte la energía solar en electricidad?", options: ["Molino de viento", "Panel solar", "Generador eléctrico", "Motor de combustión"], correct: 1 },
+        { question: "¿Cuál es una ventaja de las energías renovables?", options: ["No contaminan", "Son limitadas", "Son caras de usar", "No se pueden usar"], correct: 0 },
+        { question: "¿Qué energía se obtiene del agua en movimiento?", options: ["Energía hidráulica", "Energía solar", "Energía eólica", "Energía nuclear"], correct: 0 },
+        { question: "¿Qué energía usa el calor del interior de la Tierra?", options: ["Energía geotérmica", "Energía solar", "Energía eólica", "Energía hidráulica"], correct: 0 },
+        { question: "¿Por qué son importantes las energías renovables?", options: ["Reducen gases contaminantes", "Contaminan más", "Agotan recursos", "Son no renovables"], correct: 0 },
+        { question: "¿Cuál de estas no es una energía renovable?", options: ["Gas natural", "Energía solar", "Energía eólica", "Energía hidráulica"], correct: 0 },
+        { question: "¿Qué país es líder mundial en energía solar?", options: ["Alemania", "Brasil", "Argentina", "Canadá"], correct: 0 },
+        { question: "¿Qué es la biomasa?", options: ["Material orgánico usado para energía", "Un tipo de planta", "Una máquina", "Un gas contaminante"], correct: 0 },
+        { question: "¿Cuál es una desventaja de las energías renovables?", options: ["Son costosas inicialmente", "Contaminan mucho", "Son limitadas", "No existen"], correct: 0 },
+        { question: "¿Qué tipo de energía usan los paneles solares?", options: ["Luz solar", "Viento", "Agua", "Electricidad"], correct: 0 },
+        { question: "¿Qué es energía eólica?", options: ["Energía del viento", "Energía del agua", "Energía del sol", "Energía de la Tierra"], correct: 0 },
+        { question: "¿Qué energía produce una central hidroeléctrica?", options: ["Eléctrica", "Nuclear", "Térmica", "Solar"], correct: 0 },
+        { question: "¿Cuál es el futuro de la energía?", options: ["Energías renovables", "Carbón y petróleo", "Combustibles fósiles", "Nada"], correct: 0 }
+      ]
+    },
+    { // Cambio Climático
+      title: "Cambio Climático",
+      questions: [
+        { question: "¿Qué es el cambio climático?", options: ["Cambio natural del clima", "Aumento de gases efecto invernadero", "Aumento de la lluvia", "Disminución de temperatura"], correct: 1 },
+        { question: "¿Cuál es un gas de efecto invernadero?", options: ["Oxígeno", "Dióxido de carbono", "Nitrógeno", "Argón"], correct: 1 },
+        { question: "¿Qué causa principal del cambio climático?", options: ["Actividades humanas", "Fenómenos naturales", "Luna", "Sol"], correct: 0 },
+        { question: "¿Qué podemos hacer para frenar el cambio climático?", options: ["Reducir emisiones de CO2", "Usar más combustibles fósiles", "Deforestar", "Tirar basura"], correct: 0 },
+        { question: "¿Qué efecto tiene el derretimiento de los polos?", options: ["Aumento del nivel del mar", "Disminución del nivel del mar", "Más nieve", "Menos agua"], correct: 0 },
+        { question: "¿Qué impacto tiene el cambio climático en la biodiversidad?", options: ["Desaparición de especies", "Aumento de especies", "No afecta", "Más árboles"], correct: 0 },
+        { question: "¿Qué es la huella de carbono?", options: ["Cantidad de gases contaminantes que generamos", "Cantidad de agua usada", "Cantidad de basura", "Cantidad de energía renovable"], correct: 0 },
+        { question: "¿Cuál es una consecuencia del cambio climático?", options: ["Fenómenos meteorológicos extremos", "Clima estable", "Menos desastres naturales", "Aumento de bosques"], correct: 0 },
+        { question: "¿Qué es la deforestación?", options: ["Corte de árboles", "Plantación de árboles", "Limpieza de calles", "Contaminación del agua"], correct: 0 },
+        { question: "¿Qué energía ayuda a reducir el cambio climático?", options: ["Energías renovables", "Carbón", "Petróleo", "Gas natural"], correct: 0 },
+        { question: "¿Qué país emite más gases de efecto invernadero?", options: ["China", "Brasil", "México", "Argentina"], correct: 0 },
+        { question: "¿Cómo afecta el cambio climático a la agricultura?", options: ["Pérdida de cosechas", "Mejor calidad", "Más lluvia", "No afecta"], correct: 0 },
+        { question: "¿Qué es la adaptación al cambio climático?", options: ["Prepararse para sus efectos", "Ignorarlo", "Aumentar contaminación", "No hacer nada"], correct: 0 },
+        { question: "¿Qué es la mitigación del cambio climático?", options: ["Reducir causas del cambio climático", "Aumentar emisiones", "Deforestar", "Usar más carbón"], correct: 0 },
+        { question: "¿Qué podemos hacer para reducir nuestra huella de carbono?", options: ["Usar transporte público", "Usar autos más contaminantes", "Tirar basura en la calle", "No reciclar"], correct: 0 }
+      ]
+    },
+    { // Biodiversidad
+      title: "Biodiversidad",
+      questions: [
+        { question: "¿Qué es la biodiversidad?", options: ["Variedad de vida en un ecosistema", "Número de árboles", "Cantidad de agua", "Calidad del aire"], correct: 0 },
+        { question: "¿Por qué es importante la biodiversidad?", options: ["Mantiene el equilibrio de ecosistemas", "No es importante", "Solo es bonita", "No afecta"], correct: 0 },
+        { question: "¿Qué amenaza la biodiversidad?", options: ["Deforestación", "Plantar árboles", "No contaminar", "Cuidar animales"], correct: 0 },
+        { question: "¿Qué es una especie endémica?", options: ["Especie que solo vive en un lugar", "Especie migratoria", "Animal doméstico", "Planta común"], correct: 0 },
+        { question: "¿Qué impacto tiene la pérdida de biodiversidad?", options: ["Desbalance ecológico", "Más animales", "Menos contaminación", "Mejor clima"], correct: 0 },
+        { question: "¿Qué podemos hacer para proteger la biodiversidad?", options: ["Cuidar hábitats naturales", "Tirar basura", "Cortar árboles", "Cazar animales"], correct: 0 },
+        { question: "¿Qué es un ecosistema?", options: ["Conjunto de seres vivos y su entorno", "Solo animales", "Solo plantas", "Solo aire"], correct: 0 },
+        { question: "¿Qué es la conservación?", options: ["Cuidar y proteger la naturaleza", "Destruir bosques", "Contaminar ríos", "Quemar pastizales"], correct: 0 },
+        { question: "¿Qué animales ayudan a polinizar?", options: ["Abejas", "Leones", "Tiburones", "Elefantes"], correct: 0 },
+        { question: "¿Qué es una especie invasora?", options: ["Especie que no pertenece y causa daño", "Especie local", "Animal doméstico", "Planta cultivada"], correct: 0 },
+        { question: "¿Cuál es una causa humana que afecta la biodiversidad?", options: ["Caza furtiva", "Plantar árboles", "Limpiar ríos", "No tirar basura"], correct: 0 },
+        { question: "¿Qué es la deforestación?", options: ["Corte de bosques", "Plantación de árboles", "Cultivo de plantas", "Limpieza de playas"], correct: 0 },
+        { question: "¿Qué tipo de organismo es esencial en muchos ecosistemas?", options: ["Plantas", "Autos", "Computadoras", "Casas"], correct: 0 },
+        { question: "¿Qué es un hábitat?", options: ["Lugar donde vive un organismo", "Un tipo de animal", "Un clima", "Un río"], correct: 0 },
+        { question: "¿Qué es el ecoturismo?", options: ["Turismo responsable que cuida la naturaleza", "Turismo masivo", "Contaminación", "Construcción"], correct: 0 }
+      ]
+    },
+    { // Consumo Responsable
+      title: "Consumo Responsable",
+      questions: [
+        { question: "¿Qué significa consumo responsable?", options: ["Usar productos sin dañar el ambiente", "Comprar mucho sin pensar", "Tirar basura en la calle", "Usar energía sin límite"], correct: 0 },
+        { question: "¿Qué es la huella ecológica?", options: ["Impacto ambiental de nuestras acciones", "Cantidad de basura", "Número de productos comprados", "Tiempo libre"], correct: 0 },
+        { question: "¿Cómo podemos consumir responsablemente?", options: ["Comprar productos locales y sostenibles", "Comprar sin límite", "Usar plástico desechable", "Tirar basura en parques"], correct: 0 },
+        { question: "¿Qué es el reciclaje?", options: ["Reutilizar materiales para nuevos productos", "Tirar todo en la basura", "Quemar basura", "Comprar más plástico"], correct: 0 },
+        { question: "¿Por qué es importante reducir el consumo?", options: ["Para cuidar recursos naturales", "Para gastar más dinero", "Para contaminar más", "Para tirar más basura"], correct: 0 },
+        { question: "¿Qué es la obsolescencia programada?", options: ["Diseñar productos para que duren poco", "Comprar productos duraderos", "Reciclar siempre", "Usar productos naturales"], correct: 0 },
+        { question: "¿Qué puedes hacer para reducir el consumo de agua?", options: ["Cerrar el grifo mientras te cepillas los dientes", "Dejar el grifo abierto", "Bañarte más tiempo", "Regar plantas con agua potable"], correct: 0 },
+        { question: "¿Qué significa comprar productos sostenibles?", options: ["Productos que respetan el medio ambiente", "Productos baratos sin calidad", "Productos de plástico", "Productos sin etiqueta"], correct: 0 },
+        { question: "¿Qué es la economía circular?", options: ["Sistema que reutiliza y recicla materiales", "Sistema lineal de consumo y desecho", "Comprar mucho y tirar todo", "Contaminar menos"], correct: 0 },
+        { question: "¿Qué es el desperdicio alimentario?", options: ["Comida que se tira y no se consume", "Comida que se come", "Comida que se regala", "Comida reciclada"], correct: 0 },
+        { question: "¿Cómo reducir el desperdicio alimentario?", options: ["Comprar solo lo necesario", "Comprar mucho sin planear", "Tirar comida en la basura", "No cuidar la comida"], correct: 0 },
+        { question: "¿Qué es consumir localmente?", options: ["Comprar productos cercanos a tu zona", "Comprar en otros países", "Usar transporte contaminante", "No importar productos"], correct: 0 },
+        { question: "¿Qué es un producto ecológico?", options: ["Producto producido sin químicos dañinos", "Producto barato", "Producto plástico", "Producto con muchos empaques"], correct: 0 },
+        { question: "¿Qué puedes hacer con ropa que ya no usas?", options: ["Donarla o reciclarla", "Tirarla en la calle", "Quemarla", "Ignorarla"], correct: 0 },
+        { question: "¿Qué es la responsabilidad social empresarial?", options: ["Compromiso de empresas con la sociedad y ambiente", "Ignorar problemas sociales", "Contaminar más", "No ayudar a nadie"], correct: 0 }
+      ]
+    }
+  ];
+
+   let currentQuizIndex = 0;
+    let currentQuestionIndex = 0;
+    let score = 0;
+    let answeredQuestions = [];
+
+    const quizBox = document.getElementById('quiz-box');
+
+    function startQuiz(index) {
+      currentQuizIndex = index;
+      currentQuestionIndex = 0;
+      score = 0;
+      answeredQuestions = [];
+      quizBox.style.display = 'block';
+      renderQuestion();
+    }
+
+    function renderQuestion() {
+    const quiz = quizzes[currentQuizIndex];
+    const q = quiz.questions[currentQuestionIndex];
+    const answered = answeredQuestions[currentQuestionIndex];
+
+    quizBox.innerHTML = `
+      <h2>${quiz.title} (Pregunta ${currentQuestionIndex + 1} de ${quiz.questions.length})</h2>
+      <p>${q.question}</p>
+
+      <div class="options-container">
+        ${q.options.map((opt, i) => `
+          <button 
+            onclick="answer(${i})" 
+            ${answered !== undefined ? 'disabled' : ''} 
+            class="${answered !== undefined ? (i === q.correct ? 'correct' : (i === answered ? 'incorrect' : '')) : ''}"
+          >${opt}</button>
+        `).join('')}
+      </div>
+
+      <div class="nav-buttons">
+        <button onclick="prevQuestion()">← Anterior</button>
+        <button onclick="nextQuestion()">Siguiente →</button>
+      </div>
+
+      <p style="text-align:center;">Tu puntaje actual: ${score}</p>
+
+      ${currentQuestionIndex === quiz.questions.length - 1 ? `
+        <div style="text-align:center; margin-top: 10px;">
+          <button onclick="finishQuiz()">Terminar Quiz</button>
+        </div>` : ''}
+    `;
+  }
+
+
+    function answer(selected) {
+      const quiz = quizzes[currentQuizIndex];
+      const q = quiz.questions[currentQuestionIndex];
+
+      if (answeredQuestions[currentQuestionIndex] !== undefined) return;
+
+      answeredQuestions[currentQuestionIndex] = selected;
+      if (selected === q.correct) {
+        score++;
+      }
+      renderQuestion();
+    }
+
+    function nextQuestion() {
+      if (currentQuestionIndex < quizzes[currentQuizIndex].questions.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      }
+    }
+
+    function prevQuestion() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+      }
+    }
+
+    function finishQuiz() {
+      const total = quizzes[currentQuizIndex].questions.length;
+      const correct = score;
+      const incorrect = total - score;
+
+      quizBox.innerHTML = `
+        <h2>Quiz terminado</h2>
+        <p><strong>Puntaje final:</strong> ${score} / ${total}</p>
+        <p>✔️ Correctas: ${correct}</p>
+        <p>❌ Incorrectas: ${incorrect}</p>
+        <div style="text-align:center;"><button onclick="quizBox.style.display='none'">Cerrar</button></div>
+      `;
+    }
+  </script>
+
+</body>
+</html>

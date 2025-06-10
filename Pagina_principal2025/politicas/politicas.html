@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\politicas\css-politicas.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- Botón flotante para abrir la barra lateral -->
+<div id="menu-toggle" style="position: fixed; top: 15px; left: 15px; z-index: 1100;">
+  <button onclick="toggleSidebar()" style="font-size: 28px; background: none; border: none; color: #000000; cursor: pointer;">≡</button>
+</div>
+    <!-- Barra lateral -->
+<div class="sidebar" id="sidebar">
+    <div class="contenedor-close-boton">
+    <div class="close-btn" onclick="toggleSidebar()">
+      <i class="fas fa-times"></i> <!-- Icono X de Font Awesome -->
+    </div>
+  </div>
+    <div class="profile-section">
+      <img src="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\bases de la pagina\icono_usuario.webp" alt="Imagen de perfil" id="profile-img">
+  
+      <label for="profile-upload" class="upload-btn">Cambiar imagen</label>
+      <input type="file" id="profile-upload" accept="image/*" onchange="changeProfileImage()" />
+  
+      <div class="cuenta" ></div><p style="color: white" id="user-account">Cuenta: <span id="account-name"></span></p>
+    </div>
+  
+ <ul class="sidebar-menu">
+  <li><a href="/Pagina_principal2025/politicas/politicas.html">Políticas de privacidad</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\mas_info\mas_informacion.html">Más información</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\service\service.html">Servicio</a></li>
+  <li><a href="">Registrarse / Iniciar sesión</a></li>
+  <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+  <li><a href="c:\Users\Estudiante\Documents\Expo_2025\Pagina_principal2025\principal\pagina_principal.html">Volver</a></li>
+</ul>
+  </div>
+  
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const menuToggle = document.getElementById("menu-toggle");
+  
+      sidebar.classList.toggle("active");
+  
+      // Mostrar u ocultar el botón flotante según el estado
+      if (sidebar.classList.contains("active")) {
+        menuToggle.style.display = "none";
+      } else {
+        menuToggle.style.display = "block";
+      }
+    }
+  
+    function changeProfileImage() {
+      const fileInput = document.getElementById("profile-upload");
+      const file = fileInput.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          document.getElementById("profile-img").src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+  
+    function cerrarSesion() {
+      alert("Has cerrado sesión exitosamente.");
+      window.location.href = "c:\\Users\\HP\\Documents\\Pagina principal ´25\\index.html";
+    }
+  </script>
+  <!--fin de la barra lateral-->
+    <div class="seccion-politica">
+        <div class="titulos"><h1> Política de Privacidad</h1></div>
+        <br>
+        <br>
+        <p><strong>Última actualización:</strong> 2 de mayo de 2025</p>
+        
+        <p>En Green Leaders, nos comprometemos a proteger tu privacidad. Esta Política de Privacidad describe cómo recopilamos, usamos, almacenamos y protegemos tus datos personales cuando visitas y usas nuestro sitio web.</p>
+        
+        <ul class="lista-puntos">
+        <li><strong><h3>1.Información que recopilamos:</h3></strong>
+            <p>Recopilamos dos tipos de información:</p>
+            <ul>
+            <li><strong><h4> Información personal identificable:</h4></strong> Cuando te registras en nuestro sitio web, ya sea para acceder a tu cuenta, cambiar configuraciones o personalizar tu perfil, podemos recopilar la siguiente información personal:
+                <ul>
+                <li>Nombre</li>
+                <li>Dirección de correo electrónico</li>
+                <li>Foto de perfil (opcional)</li>
+                <li>Preferencias de cuenta y configuraciones</li>
+                </ul>
+            </li>
+            <li><strong><h4>b. Información no personal identificable:</h4></strong> También recopilamos información relacionada con el uso de nuestro sitio, incluyendo:
+                <ul>
+                <li>Dirección IP</li>
+                <li>Tipo de navegador</li>
+                <li>Fecha y hora de acceso</li>
+                <li>Páginas que visitas</li>
+                <li>Interacciones en la plataforma</li>
+                </ul>
+            </li>
+            </ul>
+        </li>
+        
+        <li><strong><h3>2. Uso de la información:</h3></strong>
+            <p>Usamos la información que recopilamos para:</p>
+            <ul>
+            <li>Proporcionar, personalizar y mejorar tu experiencia en el sitio web.</li>
+            <li>Administrar y asegurar tu cuenta.</li>
+            <li>Enviarte actualizaciones relacionadas con nuestras políticas, cambios en nuestros servicios y promociones (si has dado tu consentimiento).</li>
+            <li>Mejorar nuestros servicios mediante el análisis de los datos de navegación.</li>
+            </ul>
+        </li>
+        
+        <li><strong><h3>3. Protección de tu información:</h3></strong>
+            <p>Tomamos medidas de seguridad apropiadas para proteger tus datos personales. Utilizamos tecnología de encriptación y procedimientos estándar de la industria para proteger tu información.</p>
+        </li>
+        
+        <li><strong><h3>4. Cookies y tecnologías similares:</h3></strong>
+            <p>Nuestro sitio web utiliza cookies para mejorar la experiencia del usuario. Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo y que nos permiten reconocer tu navegador y recordar tus preferencias. Puedes controlar el uso de cookies en tu navegador, pero ten en cuenta que algunas funciones del sitio pueden no funcionar correctamente si desactivas las cookies.</p>
+        </li>
+        
+        <li><strong><h3>5. Compartir tu información:</h3></strong>
+            <p>No vendemos, alquilamos ni compartimos tus datos personales con terceros, excepto en los siguientes casos:</p>
+            <ul>
+            <li>Si es necesario para cumplir con la ley o una solicitud judicial.</li>
+            <li>Con proveedores de servicios de confianza que nos ayudan a operar el sitio web (por ejemplo, servicios de almacenamiento en la nube).</li>
+            <li>Si adquirimos o fusionamos con otra empresa, tu información podría ser transferida a esa empresa, pero siempre con la misma protección de privacidad.</li>
+            </ul>
+        </li>
+        
+        <li><strong><h3>6. Acceso y control sobre tu información:</h3></strong>
+            <p>Tienes derecho a acceder, corregir, actualizar o eliminar la información personal que nos has proporcionado. Puedes hacerlo desde tu cuenta de usuario o contactándonos directamente.</p>
+        </li>
+        
+        <li><strong><h3>7. Cambios a esta Política de Privacidad:</h3></strong>
+            <p>Nos reservamos el derecho de modificar esta Política de Privacidad en cualquier momento. Si realizamos cambios importantes, te notificaremos por correo electrónico o mediante un aviso en nuestro sitio web. Te recomendamos revisar esta página periódicamente para estar al tanto de cualquier actualización.</p>
+        </li>
+        
+        <li><strong><h3>8. Contacto:</h3></strong>
+            <p>Si tienes preguntas o inquietudes sobre esta Política de Privacidad, puedes ponerte en contacto con nosotros a través de:</p>
+            <ul>
+            <li>Correo electrónico: </li>
+            <li>Dirección:</li>
+            </ul>
+        </li>
+        </ul>
+    </div>
+</body>
+</html>
