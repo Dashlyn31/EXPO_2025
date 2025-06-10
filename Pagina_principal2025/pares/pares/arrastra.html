@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Leaders</title>
+
+  <!-- Enlace a la fuente Montserrat -->
+  <link href="<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marko+One&display=swap" rel="stylesheet">
+
+  <!-- Imagen de la pestana -->
+   <link rel="icon" href="Logo.png" />
+
+  <!-- Enlace a Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <!-- Enlace a AOS (Animate On Scroll) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Enlace a tu archivo de CSS -->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+  <!-- Enlace a Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes title-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Contenedor de la carta para el efecto 3D */
+    .card {
+      perspective: 600px;
+      margin: 3px;
+    }
+
+    /* La "carta" real que gira */
+    .card-inner {
+      position: relative;
+      width: 100px; /* 16 * 4 (Tailwind base 16 = 4px), aprox */
+      height: 100px;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+      border-radius: 0.75rem; /* rounded-xl */
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      background-color: white;
+    }
+
+    /* Al girar la carta */
+    .card-inner.flipped {
+      transform: rotateY(180deg);
+    }
+
+    /* Frente y reverso de la carta */
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem; /* text-3xl */
+      border-radius: 0.75rem;
+    }
+
+    .card-front {
+      
+      background-color: #ddba86;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      color: transparent; /* Cartas ocultas: no muestran ícono */
+    }
+
+    .card-back {
+      background-color: #ddba86;
+      color: black;
+      transform: rotateY(180deg);
+    }
+    #seccion-inspiradora {
+      background-color: #a0d8f7;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #034f84;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100vw;
+      margin: 0;
+      border-radius: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 9999;
+      }
+    .back-button {
+      position: fixed;
+      top: 20px;
+      left: 45px;
+      background-color: #808000;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      transition: background-color 0.3s, opacity 0.3s;
+      z-index: 2000;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .back-button.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+
+  </style>
+</head>
+<a href="http://localhost/EXPO_2025/Pagina_principal2025/principal/pagina_principal.html#interactive-section" class="back-button">Volver
+</a>
+<script>
+  const backButton = document.querySelector('.back-button');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      backButton.classList.add('hidden');
+    } else {
+      backButton.classList.remove('hidden');
+    }
+  });
+</script>
+<body
+  class="min-h-screen flex flex-col items-center justify-center font-sans"
+  style="background: linear-gradient(to bottom, #f8f5eb 50%, #2eb7f7 100%);"
+>
+
+  <h1 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-bounce drop-shadow-lg mt-20"
+    style="animation: title-bounce 2s infinite; font-family: 'Marko One', sans-serif; color:black;">
+    <i class="fas fa-globe-americas"></i> ¡Encuentra el Tesoro! <i class="fas fa-leaf"></i>
+  </h1>
+
+  <div class="mb-4 text-center">
+    <label for="time-select" class="font-semibold text-black">Selecciona el tiempo:</label>
+    <select id="time-select" class="ml-2 p-1 rounded border border-gray-300">
+      <option value="30">30 segundos</option>
+      <option value="60" selected>1 minuto</option>
+      <option value="90">1.5 minutos</option>
+      <option value="120">2 minutos</option>
+    </select>
+  </div>
+
+  <div id="timer" class="text-lg font-bold text-red-600 mb-4">⏱ Tiempo restante: 60s</div>
+  <div id="score" class="text-xl font-semibold mb-4" style="font-family: 'Poppins', sans-serif; color:black;">Pares encontrados: 0 / 10</div>
+
+  <div id="board" class="grid grid-cols-5 gap-3">
+    <!-- Se generará con JavaScript -->
+  </div>
+
+  <div id="result" class="text-2xl font-bold mt-6 text-white hidden"></div>
+
+  <button id="restart" class="mt-4 px-5 py-2 bg-yellow-400 hover:bg-yellow-500 text-white font-bold rounded-lg hidden">
+    Reiniciar juego
+  </button>
+
+<script>
+  const board = document.getElementById('board');
+  const result = document.getElementById('result');
+  const scoreDisplay = document.getElementById('score');
+  const restartBtn = document.getElementById('restart');
+  const timeSelect = document.getElementById('time-select');
+  const timerDisplay = document.getElementById('timer');
+
+  const totalPairs = 10;
+  const totalSquares = totalPairs * 2;
+  const icons = [
+    '01.png', '02.webp', '03.webp', '04.png', '05.webp',
+    '06.webp', '07.webp', '08.png', '09.webp', '10.png',
+  ];
+
+  let boardIcons = [];
+  let firstSelection = null;
+  let secondSelection = null;
+  let lockBoard = false;
+  let pairsFound = 0;
+  let timeLeft = 60;
+  let timerInterval;
+  let gameOver = false;
+  let hasStarted = false; // ⚠️ nuevo: controla si ya empezó el juego
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  function generateBoard() {
+    clearInterval(timerInterval);
+    board.innerHTML = '';
+    result.classList.add('hidden');
+    restartBtn.classList.add('hidden');
+    pairsFound = 0;
+    updateScore();
+    firstSelection = null;
+    secondSelection = null;
+    lockBoard = false;
+    gameOver = false;
+    hasStarted = false; // ⚠️ reseteamos para nuevo juego
+
+    const selectedTime = parseInt(timeSelect.value);
+    timeLeft = selectedTime;
+    timerDisplay.textContent = `⏱ Tiempo restante: ${timeLeft}s`;
+
+    boardIcons = [];
+    icons.slice(0, totalPairs).forEach(icon => {
+      boardIcons.push(icon, icon);
+    });
+    shuffle(boardIcons);
+
+    for (let i = 0; i < totalSquares; i++) {
+      const card = document.createElement('div');
+      card.className = 'card w-35 h-35';
+      card.dataset.index = i;
+
+      const cardInner = document.createElement('div');
+      cardInner.className = 'card-inner';
+
+      const cardFront = document.createElement('div');
+      cardFront.className = 'card-front';
+      cardFront.textContent = '❓';
+
+      const cardBack = document.createElement('div');
+      cardBack.className = 'card-back';
+      cardBack.innerHTML = `<img src="${boardIcons[i]}" alt="icon" class="w-28 h-28 object-contain" />`;
+
+      cardInner.appendChild(cardFront);
+      cardInner.appendChild(cardBack);
+      card.appendChild(cardInner);
+      board.appendChild(card);
+
+      card.addEventListener('click', () => {
+        if (lockBoard || cardInner.classList.contains('flipped') || gameOver) return;
+
+        // ⚠️ Iniciar temporizador en el primer click real
+        if (!hasStarted) {
+          hasStarted = true;
+          startTimer();
+        }
+
+        flipCard(cardInner);
+      });
+    }
+  }
+
+  function flipCard(cardInner) {
+    cardInner.classList.add('flipped');
+
+    if (!firstSelection) {
+      firstSelection = cardInner;
+      return;
+    }
+
+    secondSelection = cardInner;
+    lockBoard = true;
+
+    const firstIndex = firstSelection.parentElement.dataset.index;
+    const secondIndex = secondSelection.parentElement.dataset.index;
+
+    if (boardIcons[firstIndex] === boardIcons[secondIndex]) {
+      pairsFound++;
+      updateScore();
+      resetSelections();
+
+      if (pairsFound === totalPairs) {
+        clearInterval(timerInterval);
+        endGame(true);
+      }
+    } else {
+      setTimeout(() => {
+        firstSelection.classList.remove('flipped');
+        secondSelection.classList.remove('flipped');
+        resetSelections();
+      }, 1200);
+    }
+  }
+
+  function resetSelections() {
+    firstSelection = null;
+    secondSelection = null;
+    lockBoard = false;
+  }
+
+  function updateScore() {
+    scoreDisplay.textContent = `Pares encontrados: ${pairsFound} / ${totalPairs}`;
+  }
+
+  function endGame(won) {
+    lockBoard = true;
+    gameOver = true;
+    result.classList.remove('hidden');
+    result.textContent = won ? '🎉 ¡Felicidades! Encontraste todos los pares.' : '💥 ¡Juego terminado!';
+    restartBtn.classList.remove('hidden');
+  }
+
+  function startTimer() {
+    timerDisplay.textContent = `⏱ Tiempo restante: ${timeLeft}s`;
+
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      timerDisplay.textContent = `⏱ Tiempo restante: ${timeLeft}s`;
+
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endGame(false);
+      }
+    }, 1000);
+  }
+
+  restartBtn.addEventListener('click', generateBoard);
+  timeSelect.addEventListener('change', generateBoard);
+
+  generateBoard(); // ⚠️ inicia el tablero pero NO el cronómetro
+</script>
+
+</body>
+
+</html>
